@@ -1,3 +1,7 @@
+# Test
+to run: uv run streamlit run src/main.py
+
+
 # Topic Modeling Tool
 
 This tool is designed to perform topic modeling and other various text analysis on textual data using R for core analysis and a Python-based user interface (UI) built with the Tkinter library. It is particularly effective with long textual responses and provides visual aids through word clouds for shorter surveys.
