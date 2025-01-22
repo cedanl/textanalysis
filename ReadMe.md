@@ -32,6 +32,18 @@
   </h3>
 </div>
 
+<div align="center">
+  <sub>The ultimate text analysis tool. Built with ❤︎ by
+    <a href="https://github.com/cedanl">CEDA</a> and
+    <a href="https://github.com/cedanl/textanalysis/graphs/contributors">
+      contributors
+    </a>
+    .
+  </sub>
+</div>
+
+<br />
+
 
 # Running the Application
 
@@ -116,11 +128,23 @@ Before using this tool, please ensure the following steps are completed to set u
   - Use the **Topic Modeling** option for detailed analysis of more complex text data.
 - Once the analysis is complete, the tool automatically saves the results in an Excel file in the same directory as the script.
 
+
+## Contributors
+
+Thank you to all the people who have already contributed to textanalysis[[contributors](https://github.com/cedanl/textanalysis/graphs/contributors)].
+
+Special thanks to @[radboudir](https://github.com/radboudir) who started the project.
+
+[![](https://github.com/radboudir.png?size=50)](https://github.com/radboudir)
+[![](https://github.com/asewnandan.png?size=50)](https://github.com/asewnandan)
+[![](https://github.com/tin900.png?size=50)](https://github.com/tin900)
+[![](https://github.com/Tomeriko96.png?size=50)](https://github.com/Tomeriko96)
+
+
 ## Getting Help
 
 If you encounter any issues or need further assistance, please feel free to contact amir.khodaie@ru.nl
 
-## Contribution
 
-text
+
 
