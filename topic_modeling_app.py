@@ -1,19 +1,17 @@
 # ---------------------------------------
 # config section
 # ---------------------------------------
-config = {
-    "bar_chart_colors": "viridis",  # changed color palette to viridis for a better look
-    "max_topics_scale": 10,
-    "top_words_to_show": 30,
-    "filter_file_prefix": "Topic_Modeling_analysis",
-    # improved guidance text
-    "initial_popup_text": "1) load an excel file (.xls or .xlsx)\n2) select a sheet and column\n3) run topic modeling or create a word cloud\n4) adjust topics or filter words as needed\n5) export your results\n\ntip: hover over labels for tooltips.",
-    "placeholder_sentiment_text": "sentiment analysis not yet implemented",
-    # now only excel files
-    "allowed_filetypes": [
-        ("Excel files", "*.xlsx;*.xls")
-    ]
-}
+
+##' *TODO* 
+##' Check if config is correctly parsed
+
+import yaml
+import os
+
+config_path = os.path.join('config', 'config.yaml')
+with open(config_path, 'r') as file:
+    config = yaml.safe_load(file)
+
 
 
 # ---------------------------------------
