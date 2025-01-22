@@ -67,3 +67,4 @@ coverage.xml
 
 # Virtual Environment
 venv/
+.DS_Store
