@@ -1,5 +1,21 @@
-# Test
-to run: uv run streamlit run src/main.py
+# Running the Application
+
+Start the Streamlit app:
+
+```
+uv run streamlit run src/main.py
+```
+
+
+This will open the application in your default web browser.
+
+## Using the Application
+
+- Use the Word Cloud option for visualizing key terms in shorter surveys.
+    
+- Use the Topic Modeling option for detailed analysis of more complex text data.
+    
+- Results are automatically saved as an Excel file in the same directory as the script.
 
 
 # Topic Modeling Tool
