@@ -1,4 +1,73 @@
-
 src/.DS_Store
 src/.DS_Store
 src/components/__pycache__/sidebar.cpython-313.pyc
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.env.*
+.venv
+.venv.*
+
+# Spyder project settings
+.spyderproject
+
+# Rope project settings
+.ropeproject
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Tkinter
+*.tcl
+*.tk
+
+# Visual Studio Code
+.vscode/
+
+# Virtual Environment
+venv/
+.DS_Store
