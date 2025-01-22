@@ -1,3 +1,38 @@
+<p align="center"><img src="src/assets/Npuls_logo.png" alt="CEDA"></p>
+
+<h1 align="center">Npuls-CEDA | Text Analysis</h1>
+
+<div align="center"> <strong>🔍 Advanced Text Analysis Tool 📊</strong>
+    <br> Powerful R-based topic modeling with a user-friendly Python Streamlit interface.<br> 
+    <sub>Ideal for long responses and short surveys with word cloud visualization.</sub> </div> 
+
+<br>
+
+<div align="center">
+  <h3>
+    <a href="https://community-data-ai.npuls.nl/groups/view/44d20066-53a8-48c2-b4e9-be348e05d273/project-center-for-educational-data-analytics-ceda">
+      Website
+    </a>
+    <span> | </span>
+    <a href="https://github.com/cedanl/textanalysis#features">
+      Features
+    </a>
+    <span> | </span>
+    <a href="https://github.com/cedanl/textanalysis#download-and-installation">
+      Downloads
+    </a>
+    <span> | </span>
+    <a href="https://github.com/cedanl/textanalysis#development">
+      Development
+    </a>
+    <span> | </span>
+    <a href="https://github.com/cedanl/textanalysis#contribution">
+      Contribution
+    </a>
+  </h3>
+</div>
+
+
 # Running the Application
 
 Start the Streamlit app:
@@ -21,7 +56,6 @@ This will open the application in your default web browser.
 # Topic Modeling Tool
 
 This tool is designed to perform topic modeling and other various text analysis on textual data using R for core analysis and a Python-based user interface (UI) built with the Tkinter library. It is particularly effective with long textual responses and provides visual aids through word clouds for shorter surveys.
-test test
 
 # Very quick steps
 ```
@@ -85,4 +119,8 @@ Before using this tool, please ensure the following steps are completed to set u
 ## Getting Help
 
 If you encounter any issues or need further assistance, please feel free to contact amir.khodaie@ru.nl
+
+## Contribution
+
+text
 
