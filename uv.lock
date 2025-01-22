@@ -97,6 +97,22 @@ wheels = [
 ]
 
 [[package]]
+name = "fastexcel"
+version = "0.12.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyarrow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/93/bf/1876776d424bbcb069520710df4b930adfe998eaa0bb4a88988254ffa8e7/fastexcel-0.12.1.tar.gz", hash = "sha256:5dc2f1ff3ddff6c933d1f924add7f7f5dc20388c1e70b22afae0f28b3c4f01c9", size = 38264 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/64/a8/e39f5c609deaf1754b520e75231368b373c4e6a62dfc6e8d283918aa2284/fastexcel-0.12.1-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:7c4c959a49329a53540ed86d4f92cd4af2d774b08c47ad190841e4daf042758a", size = 1174326 },
+    { url = "https://files.pythonhosted.org/packages/b5/d7/1ff26ec00aac2623a87e9397c252f515f45ed28425007c1b895f1810fd5a/fastexcel-0.12.1-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:e889290b2d1437e57c4fb500657f0d2908de6aa5b291475b93e3b5d7e0cea938", size = 1141937 },
+    { url = "https://files.pythonhosted.org/packages/9d/56/f4967db7c848e191d633366fe4876af74e656e809c9719c1a7489b50349d/fastexcel-0.12.1-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c09119f14760dfee0c1cb94ef281bee2abb844975fdf0fbf34c5b836ff58d39d", size = 1288445 },
+    { url = "https://files.pythonhosted.org/packages/50/0d/c2e61c3b30d2cbd083cb010346745edc8e6ade3401b1f9d7f083aaff051e/fastexcel-0.12.1-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a169b72df88406007d8449a4b216effddeaad5e9d73f4de1fbd8cbfd6ce6a01c", size = 1309212 },
+    { url = "https://files.pythonhosted.org/packages/85/13/6662e60e76e878e2251ca78d7f6630103a8e998f9ca1fa7154f94845425f/fastexcel-0.12.1-cp38-abi3-win_amd64.whl", hash = "sha256:5c1868546ae0912040449e0b26dd4759db3f76a94e0fa5ac3c86fdaf54185e9c", size = 1017083 },
+]
+
+[[package]]
 name = "gitdb"
 version = "4.0.12"
 source = { registry = "https://pypi.org/simple" }
@@ -315,6 +331,20 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/e5/fb/a7960e838bc5df57a2ce23183bfd2290d97c33028b96bde332a9057834d3/pillow-11.1.0-cp313-cp313t-win32.whl", hash = "sha256:dda60aa465b861324e65a78c9f5cf0f4bc713e4309f83bc387be158b077963d9", size = 2295494 },
     { url = "https://files.pythonhosted.org/packages/d7/6c/6ec83ee2f6f0fda8d4cf89045c6be4b0373ebfc363ba8538f8c999f63fcd/pillow-11.1.0-cp313-cp313t-win_amd64.whl", hash = "sha256:ad5db5781c774ab9a9b2c4302bbf0c1014960a0a7be63278d13ae6fdf88126fe", size = 2631595 },
     { url = "https://files.pythonhosted.org/packages/cf/6c/41c21c6c8af92b9fea313aa47c75de49e2f9a467964ee33eb0135d47eb64/pillow-11.1.0-cp313-cp313t-win_arm64.whl", hash = "sha256:67cd427c68926108778a9005f2a04adbd5e67c442ed21d95389fe1d595458756", size = 2377651 },
+]
+
+[[package]]
+name = "polars"
+version = "1.20.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/dd/8f/1005f24c8c413d8a393973fcb45e6085a2311bb513ee0c6674d438e99c31/polars-1.20.0.tar.gz", hash = "sha256:e8e9e3156fae02b58e276e5f2c16a5907a79b38617a9e2d731b533d87798f451", size = 4292434 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/93/ef/74d56f82bc2e7911276ffad8f24e7ae6f7a102ecab3b2e88b87e84243356/polars-1.20.0-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:9a313e10ea80b99a0d32bfb942b2260b9658155287b0c2ac5876323acaff4f2c", size = 32143323 },
+    { url = "https://files.pythonhosted.org/packages/dd/e1/51c7b2bc3037af89f1c109b61a2d2f44c411212df63dd0e9c6683b66d98e/polars-1.20.0-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:4474bd004376599f7e4906bd350026cbbe805ba604121090578a97f63da15381", size = 28954418 },
+    { url = "https://files.pythonhosted.org/packages/2a/1a/862b8bf65182b261022292a1cd49728db876a1ef64ff377d6f7b17653886/polars-1.20.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4996e17cb6f57d9aeaf79f66c54ef2913cea7bd025410c076ef8c05d4f7d792a", size = 32850943 },
+    { url = "https://files.pythonhosted.org/packages/b7/33/1970863f0c1782a916299346d150c5bb8373d4e6827fabb8c37a0a2bcb8e/polars-1.20.0-cp39-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:d488ffb92d4934d9c326fa2d0fb2e9a4e3c2c625c59f4a77a77e4acd4d5a0d66", size = 29885148 },
+    { url = "https://files.pythonhosted.org/packages/bb/2d/b29112da3e98ba55e8ba77f08a90312004d2e4be0fd6401ff7d5d71eae0a/polars-1.20.0-cp39-abi3-win_amd64.whl", hash = "sha256:5ce417d2b6d4f3b8f422fcb3482039e8076182cceacbd880175fe970c6f99c84", size = 32947632 },
+    { url = "https://files.pythonhosted.org/packages/60/da/245e5852342cab10c48dc788f7b3d39a1f926f783ea124f196ad783ea6aa/polars-1.20.0-cp39-abi3-win_arm64.whl", hash = "sha256:f474f3d65450138cd2dbab2d9b6041b8646c30fad0b28e6d62457788f994bf62", size = 29141207 },
 ]
 
 [[package]]
@@ -549,12 +579,18 @@ name = "textanalysis-cedanl"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "fastexcel" },
+    { name = "pandas" },
+    { name = "polars" },
     { name = "pyyaml" },
     { name = "streamlit" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "fastexcel", specifier = ">=0.12.1" },
+    { name = "pandas", specifier = ">=2.2.3" },
+    { name = "polars", specifier = ">=1.20.0" },
     { name = "pyyaml", specifier = ">=6.0.2" },
     { name = "streamlit", specifier = ">=1.41.1" },
 ]
