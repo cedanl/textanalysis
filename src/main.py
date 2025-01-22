@@ -14,6 +14,10 @@ if 'uploaded_file' not in st.session_state:
 
 # Sidebar
 with st.sidebar:
+    # Add logo
+    logo_path = Path(__file__).parent / 'assets/Npuls_logo.png'
+    st.image(str(logo_path), use_container_width=True)
+
     st.title("Menu")
     
     uploaded_file = st.file_uploader("Upload File", type=["xlsx", "xls"], 
