@@ -50,7 +50,7 @@
 Start the Streamlit app:
 
 ```
-uv run streamlit run src/CEDA_HOME.py
+uv run streamlit run src/main.py
 ```
 
 

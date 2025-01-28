@@ -1,11 +1,24 @@
 import streamlit as st
-import os
+from config.screen_scanner import *
 
-page_paths = [f"screens/{f}" for f in os.listdir("src/screens") if f.endswith(".py") and f != "__init__.py"]
+###
+# Import Screens
+###
+pages =  get_screens()
+test = st.Page("screens/Home.py", title="Bug reports", icon=":material/bug_report:")
 
 # Use list comprehension to create Page objects in st.navigation
-pg = st.navigation([st.Page(path) for path in page_paths])
+# pg = st.navigation([st.Page(path) for path in page_paths])
+pg = st.navigation([test])
 
-# Create navigation
+###
+# Run Navigation / APP
+###
 st.set_page_config(page_title="Developer Preview", page_icon=":material/edit:")
 pg.run()
+
+
+###
+# TODO
+###
+# [] Veranderen main.py -> CEDA.py | CEDA_run.py?
