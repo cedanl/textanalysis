@@ -4,12 +4,14 @@ from config.screen_scanner import get_screens
 ###
 # Set Page Config
 ###
-st.set_page_config(page_title="Developer Preview", page_icon=":material/edit:")
+st.set_page_config(page_title="CEDA Preview", page_icon=":material/edit:")
 
 ###
 # Initialize Navigation
 ###
 pages =  get_screens()
+
+print(pages)
 
 pg = st.navigation([
     st.Page(

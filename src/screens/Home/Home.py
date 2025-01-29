@@ -1,7 +1,7 @@
 # Home.py
 import streamlit as st
 
-title = "Bug reports"
+title = "Home"
 icon = ":material/bug_report:"
 
 st.write("Welcome to the home page!")
