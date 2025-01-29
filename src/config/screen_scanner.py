@@ -4,14 +4,18 @@ import os
 def extract_page_info(file_path):
     with open(file_path, 'r') as file:
         tree = ast.parse(file.read())
-        title = icon = None
+        title = None
+        icon = None
         
         for node in ast.walk(tree):
-            if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name):
-                target = node.targets[0].id
-                if target in ('title', 'icon'):
-                    locals()[target] = node.value.s
-                    
+            if isinstance(node, ast.Assign):
+                for target in node.targets:
+                    if isinstance(target, ast.Name):
+                        if target.id == 'title' and isinstance(node.value, ast.Str):
+                            title = node.value.s
+                        elif target.id == 'icon' and isinstance(node.value, ast.Str):
+                            icon = node.value.s
+                            
         return title, icon
 
 def get_screens():
@@ -34,7 +38,3 @@ def get_screens():
                     })
     
     return screens
-
-screens = get_screens()
-for screen in screens:
-    print(screen)

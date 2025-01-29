@@ -11,7 +11,7 @@ st.set_page_config(page_title="CEDA Preview", page_icon=":material/edit:")
 ###
 pages =  get_screens()
 
-print(pages)
+print(pages[2])
 
 pg = st.navigation([
     st.Page(
