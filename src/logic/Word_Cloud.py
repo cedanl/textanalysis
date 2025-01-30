@@ -3,7 +3,6 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
 
-
 def generate_wordcloud():
     if st.session_state.df is not None:
         # Ensure `st.session_state.df` is a pandas DataFrame
