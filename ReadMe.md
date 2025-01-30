@@ -1,4 +1,4 @@
-<p align="center"><img src="src/assets/Npuls_logo.png" alt="CEDA"></p>
+<p align="center"><img src="src/assets/npuls_logo.png" alt="CEDA"></p>
 
 <h1 align="center">Npuls-CEDA | Text Analysis</h1>
 
