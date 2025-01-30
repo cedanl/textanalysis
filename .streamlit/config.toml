@@ -1,7 +1,13 @@
 [theme]
-primaryColor="#f3d9db"
-backgroundColor="#f9eeee"
-secondaryBackgroundColor="#f3d9db"
+#primaryColor="#f3d9db"
+#backgroundColor="#f9eeee"
+#secondaryBackgroundColor="#f3d9db"
+#textColor="#000000"
+
+# Temporary Theme
+primaryColor="#FF4B4B"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F0F2F6"
 textColor="#000000"
 
 [browser]
