@@ -6,12 +6,6 @@ icon = ":material/home:"
 
 st.title("Welcome to the home page Corneel!")
 
-# Display or edit DataFrame if available
-if st.session_state.df is not None:
-    st.session_state.df = st.data_editor(st.session_state.df)
-else:
-    st.write("No File available. Please upload a file in the sidebar.")
-
 st.markdown(
     """
     Streamlit is an open-source app framework built specifically for

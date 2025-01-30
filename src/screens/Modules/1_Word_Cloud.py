@@ -3,7 +3,6 @@ import streamlit as st
 # ---------------------------------------
 # PAGE CONFIGURATION
 # ---------------------------------------
-title = "Word Cloud"
 icon = ":material/cloud_queue:"
 
 # ---------------------------------------
