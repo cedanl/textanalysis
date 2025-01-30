@@ -1,6 +1,6 @@
 import streamlit as st
 from config.screen_scanner import get_screens, group_pages_by_subdirectory
-from utils.file_handler import file_handler
+from logic.file_handler import file_handler
 # ---------------------------------------
 # TODO
 # ---------------------------------------
