@@ -24,11 +24,6 @@ grouped_pages = group_pages_by_subdirectory(pages)
 # Create the navigation structure
 pg = st.navigation(grouped_pages)
 
-###
-# Run Page
-###
-pg.run()
-
 def app():
     # File uploader in sidebar
     uploaded_file = st.sidebar.file_uploader("Upload a CSV file", type=["csv"])
@@ -44,3 +39,10 @@ def app():
             
 if __name__ == '__main__':
     app()
+
+
+###
+# Run Page
+###
+pg.run()
+
