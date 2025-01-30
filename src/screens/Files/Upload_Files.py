@@ -3,10 +3,10 @@ import streamlit as st
 # ---------------------------------------
 # PAGE CONFIGURATION
 # ---------------------------------------
-title = "Word Cloud"
-icon = ":material/cloud_queue:"
+# title = "Word Cloud"
+icon = ":material/file_upload:"
 
 # ---------------------------------------
 # PAGE ELEMENTS
 # ---------------------------------------
-st.title("Word cloud page")
+st.write("Maybe move file handler from sidebar? Then we can use this section to also inspect the files")

@@ -1,5 +1,16 @@
 import streamlit as st
 
+# ---------------------------------------
+# PAGE CONFIGURATION
+# ---------------------------------------
+# title = "Word Cloud"
+icon = ":material/model_training:"
+
+# ---------------------------------------
+# PAGE ELEMENTS
+# ---------------------------------------
+
+
 st.title("Topic Modeling ZZZ")
 
 

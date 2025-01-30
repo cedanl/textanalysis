@@ -10,4 +10,4 @@ st.title("Welcome to the home page!")
 if st.session_state.df is not None:
     st.session_state.df = st.data_editor(st.session_state.df)
 else:
-    st.write("No DataFrame available. Please upload a file.")
+    st.write("No File available. Please upload a file in the sidebar.")

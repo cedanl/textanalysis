@@ -7,7 +7,7 @@ def file_handler():
 
     if uploaded_file is not None:
         # Read CSV into DataFrame
-        st.session_state.df = pl.read_csv(uploaded_file)
+        st.session_state.df = pl.read_csv(uploaded_file, separator = ';' )
         st.sidebar.success("File uploaded successfully!")
     else:
         st.sidebar.warning("Please upload a CSV file.")
