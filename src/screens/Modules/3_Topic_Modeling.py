@@ -9,10 +9,7 @@ icon = ":material/model_training:"
 # ---------------------------------------
 # PAGE ELEMENTS
 # ---------------------------------------
-
-
 st.title("Topic Modeling ZZZ")
-
 
 # Display or edit DataFrame if available
 if st.session_state.df is not None:
