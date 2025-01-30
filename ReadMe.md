@@ -135,8 +135,8 @@ Thank you to all the people who have already contributed to textanalysis[[contri
 
 Special thanks to @[radboudir](https://github.com/radboudir) who started the project.
 
-[![](https://github.com/radboudir.png?size=50)](https://github.com/radboudir)
 [![](https://github.com/asewnandan.png?size=50)](https://github.com/asewnandan)
+[![](https://github.com/radboudir.png?size=50)](https://github.com/radboudir)
 [![](https://github.com/tin900.png?size=50)](https://github.com/tin900)
 [![](https://github.com/Tomeriko96.png?size=50)](https://github.com/Tomeriko96)
 
