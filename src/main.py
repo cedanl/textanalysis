@@ -26,6 +26,10 @@ pg = st.navigation(grouped_pages)
 if __name__ == '__main__':
     file_handler()
 
+# Add Logo
+LOGO_URL_LARGE = 'src/assets/npuls_logo.png'
+st.logo(LOGO_URL_LARGE)
+
 # ---------------------------------------
 # RUN STREAMLIT | PAGES | NAVIGATION
 # ---------------------------------------
