@@ -10,6 +10,7 @@ from bertopic import BERTopic
 from umap import UMAP
 from sentence_transformers import SentenceTransformer
 import os
+from hdbscan import HDBSCAN
 
 class TopicModelingPipeline:
     def __init__(self, excel_file_path, column_of_interest, 
@@ -108,12 +109,12 @@ class TopicModelingPipeline:
         """Visualize distribution of response lengths"""
         self.df['response_length'] = self.df[self.column_of_interest].str.split().str.len()
         
-        plt.figure(figsize=(10, 5))
-        plt.hist(self.df['response_length'], bins=20, color='blue', edgecolor='black')
-        plt.title('Distribution of Response Lengths')
-        plt.xlabel('Length of Response (words)')
-        plt.ylabel('Frequency')
-        plt.show()
+        #plt.figure(figsize=(10, 5))
+        #plt.hist(self.df['response_length'], bins=20, color='blue', edgecolor='black')
+        #plt.title('Distribution of Response Lengths')
+        #plt.xlabel('Length of Response (words)')
+        #plt.ylabel('Frequency')
+        #plt.show()
     
     def _detect_language(self):
         """Detect dominant language in the dataset"""
@@ -165,20 +166,33 @@ class TopicModelingPipeline:
         print(f"Using embedding model: {model_name}")
         return SentenceTransformer(model_name)
     
-    def fit_topic_model(self):
+    def fit_topic_model(self, optimal_topics):
         """Fit the BERTopic model and transform documents"""
         # Select embedding model
         embedding_model = self._pick_embedding_model()
         
+        # Use provided optimal number of topics if available, else "auto"
+        nr_topics = optimal_topics if isinstance(optimal_topics, int) else "auto"
+        
         # Configure UMAP and BERTopic
         umap_model = UMAP(n_neighbors=10, n_components=3, metric='cosine', random_state=42)
+        hdbscan_model = HDBSCAN(min_cluster_size=nr_topics, metric='euclidean', cluster_selection_method='eom', prediction_data=True)
+
+        # umap_model = UMAP(
+        # n_neighbors=50,         # A larger neighborhood captures more global structure.
+        # n_components=3,         # 3 dimensions for more complex analyses or 3D visualizations.
+        # metric='euclidean',     # Standard Euclidean distance.
+        # min_dist=0.0,           # Allows clusters to be very tight.
+        # n_epochs=500,           # More epochs for a stable, refined embedding.
+        # random_state=42)
         
         self.topic_model = BERTopic(
             embedding_model=embedding_model, 
             min_topic_size=self.min_topic_size, 
             verbose=True,
-            nr_topics="auto",
-            umap_model=umap_model
+            #nr_topics=nr_topics,
+            umap_model=umap_model,
+            hdbscan_model=hdbscan_model
         )
         
         # Prepare documents
@@ -233,20 +247,15 @@ class TopicModelingPipeline:
                 viz_func()
             except Exception as e:
                 print(f"Error generating {name} visualization: {e}")
+                
+        return self
     
     def _visualize_documents(self):
         """Visualize document clustering"""
-        embeddings = self.topic_model._extract_embeddings(
-            self.df[self.column_of_interest].tolist()
-        )
-        reduced_embeddings = UMAP(
-            n_neighbors=10, n_components=2, min_dist=0.0, metric='cosine'
-        ).fit_transform(embeddings)
-        
-        self.topic_model.visualize_documents(
-            self.df[self.column_of_interest].tolist(), 
-            reduced_embeddings=reduced_embeddings
-        )
+        documents = self.df[self.column_of_interest].tolist()
+        embeddings = self.topic_model._extract_embeddings(documents)
+        fig_document = self.topic_model.visualize_documents(documents, embeddings=embeddings)
+        fig_document.show()
     
     def _visualize_topic_overview(self):
         """Visualize topic overview"""
@@ -274,6 +283,75 @@ class TopicModelingPipeline:
         )
         fig_heatmap.show()
 
+    def evaluate_topic_diversity(self, top_n_words=50):
+        """
+        Evaluate and plot topic diversity for a range of topic numbers (2 to 10).
+        Topic diversity is computed as the ratio of unique words (from top_n_words per topic)
+        over the total number of words across topics.
+        
+        Note:
+        - With this metric, a higher diversity score indicates that the topics share fewer words,
+            meaning they are more distinct from each other. Depending on the goal, this may be preferred.
+        """
+        # analyze topics from 2 to 10
+        min_topics, max_topics = 2, 10
+        documents = self.df[self.column_of_interest].tolist()
+        diversity_scores = []
+        topic_range = list(range(min_topics, max_topics + 1))
+        
+        print("DEBUG: Starting diversity evaluation for topics 2 to 10...")
+        embedding_model = self._pick_embedding_model()
+        
+        for nr in topic_range:
+            umap_model = UMAP(n_neighbors=10, n_components=3, metric='cosine', random_state=42)
+            hdbscan_model = HDBSCAN(min_cluster_size=nr, metric='euclidean', cluster_selection_method='eom', prediction_data=True)
+            
+            temp_topic_model = BERTopic(
+                embedding_model=embedding_model, 
+                min_topic_size=self.min_topic_size, 
+                verbose=False,
+                #nr_topics=nr_topics,
+                umap_model=umap_model,
+                hdbscan_model=hdbscan_model)
+        
+            temp_topics, _ = temp_topic_model.fit_transform(documents)
+            topics_info = temp_topic_model.get_topic_info()
+            
+            all_words = []
+            count_topics = 0
+            for topic in topics_info["Topic"]:
+                if topic == -1:
+                    continue
+                topic_words = temp_topic_model.get_topic(topic)
+                if topic_words:
+                    words = [word for word, _ in topic_words][:top_n_words]
+                    all_words.extend(words)
+                    count_topics += 1
+            
+            if count_topics == 0:
+                diversity = 0
+            else:
+                unique_words = len(set(all_words))
+                total_words = count_topics * top_n_words
+                diversity = unique_words / total_words
+            diversity_scores.append(diversity)
+            print(f"DEBUG: Evaluated {nr} topics.")
+        
+        # diversity scores in a clear and clean format
+        plt.figure(figsize=(10, 6))
+        plt.plot(topic_range, diversity_scores, marker='o', linestyle='-', color='g', label="Diversity Score")
+        
+        plt.title('Topic Diversity vs Number of Topics', fontsize=16)
+        plt.xlabel('Number of Topics', fontsize=14)
+        plt.ylabel('Diversity Score', fontsize=14)
+        plt.xticks(topic_range, fontsize=12)
+        plt.yticks(fontsize=12)
+        plt.grid(True, linestyle='--', alpha=0.7)
+        plt.tight_layout()
+        plt.legend()
+        plt.show()
+        
+        return self
 def main():
     # DEBUG: Main function start marker
     print("DEBUG: Starting main topic modeling pipeline")
@@ -293,14 +371,15 @@ def main():
             column_of_interest, 
             user_filter_words=user_filter_words
         )
+        optimal_topics = 3 # a guide for model to find optimal number of topics
         
         (pipeline
-         .load_data()
-         .preprocess_data()
-         .fit_topic_model()
-         .generate_topic_summary()
-         .visualize_topics()
-        )
+        .load_data()
+        .preprocess_data()
+        .fit_topic_model(optimal_topics=optimal_topics)
+        .generate_topic_summary()
+        .visualize_topics()
+        .evaluate_topic_diversity(top_n_words=50))
         
         print("DEBUG: Topic modeling pipeline completed successfully")
     
