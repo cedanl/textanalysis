@@ -40,14 +40,6 @@ if st.session_state.df is not None:
             # Visualize results
             # visualize_sentiment(st.session_state.df)
             
-            # Download option
-            csv = st.session_state.df.to_csv(index=False)
-            st.download_button(
-                label="Download results as CSV",
-                data=csv,
-                file_name="sentiment_analysis_results.csv",
-                mime="text/csv",
-            )
         except Exception as e:
             st.error(f"Error performing sentiment analysis: {e}")
 else:

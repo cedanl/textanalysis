@@ -30,12 +30,35 @@ def analyze_sentiment_vader(sentence):
     label = "Positive" if scores["compound"] >= 0 else "Negative"
     return label, scores["compound"]
 
+
 def perform_sentiment_analysis(df, selected_column):
     try:
         column_data = df[selected_column]
+        total_rows = len(column_data)
         
-        transformer_results = [analyze_sentiment_transformer(str(text)) for text in column_data if pd.notna(text)]
-        vader_results = [analyze_sentiment_vader(str(text)) for text in column_data if pd.notna(text)]
+        transformer_results = []
+        vader_results = []
+        
+        # Create a progress bar
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+        
+        for i, text in enumerate(column_data):
+            if pd.notna(text):
+                transformer_results.append(analyze_sentiment_transformer(str(text)))
+                vader_results.append(analyze_sentiment_vader(str(text)))
+            else:
+                transformer_results.append(("Unknown", 0.0))
+                vader_results.append(("Unknown", 0.0))
+            
+            # Update progress
+            progress = (i + 1) / total_rows
+            progress_bar.progress(progress)
+            status_text.text(f"Processed {i+1}/{total_rows} rows")
+        
+        # Clear the progress bar and status text
+        progress_bar.empty()
+        status_text.empty()
         
         df = df.with_columns([
             pl.Series("Transformer_Sentiment", [result[0] for result in transformer_results]),
@@ -55,7 +78,6 @@ def perform_sentiment_analysis(df, selected_column):
     except Exception as e:
         st.error(f"Error performing sentiment analysis: {e}")
         return df
-
 
 def visualize_sentiment(df):
     fig = make_subplots(rows=1, cols=3, subplot_titles=('Transformer Sentiment', 'VADER Sentiment', 'Combined Sentiment'))
