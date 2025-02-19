@@ -1,9 +1,10 @@
 import streamlit as st
+import polars as pl
+from logic.topic_modeling import perform_topic_modeling, visualize_topics
 
 # ---------------------------------------
 # PAGE CONFIGURATION
 # ---------------------------------------
-# title = "Word Cloud"
 icon = ":material/model_training:"
 
 # ---------------------------------------
@@ -26,7 +27,45 @@ st.markdown(
 )
 
 # Display or edit DataFrame if available
-if st.session_state.df is not None:
-    st.session_state.df = st.data_editor(st.session_state.df)
+if 'df' in st.session_state and st.session_state.df is not None:
+    st.session_state.df = st.data_editor(st.session_state.df, key="topic_modeling_data_editor")
+    
+    # Column selection for topic modeling
+    columns = st.session_state.df.columns
+    selected_column = st.selectbox("Select a column for Topic Modeling", columns, key="topic_modeling_column_select")
+    
+    # Number of topics selection
+    num_topics = st.slider("Select number of topics", min_value=2, max_value=20, value=5, step=1)
+    
+    if st.button("Run Topic Modeling"):
+        try:
+            # Perform topic modeling
+            topics, topic_assignments = perform_topic_modeling(st.session_state.df, selected_column, num_topics)
+            
+            # Add topic assignments to the dataframe
+            st.session_state.df = st.session_state.df.with_columns(pl.Series("Topic", topic_assignments))
+            
+            # Display results
+            st.write("Topic Modeling Results:")
+            st.dataframe(st.session_state.df)
+            
+            # Visualize topics
+            visualize_topics(topics)
+            
+        except Exception as e:
+            st.error(f"Error performing topic modeling: {e}")
 else:
-    st.write("No DataFrame available. Please upload a file.")
+    st.write("No DataFrame available. Please upload a file on the Home page.")
+
+# Add any additional explanations or instructions
+st.markdown(
+    """
+    ### How to use:
+    1. Upload your data file on the Home page.
+    2. Select the column containing the text you want to analyze.
+    3. Choose the number of topics you want to identify.
+    4. Click "Run Topic Modeling" to process the data.
+    5. View the results in the table and topic visualization.
+    6. Download the enhanced dataset with topic assignments if desired.
+    """
+)
