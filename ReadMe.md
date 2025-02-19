@@ -95,8 +95,10 @@ Special thanks to @[radboudir](https://github.com/radboudir) who started the pro
 
 [![](https://github.com/asewnandan.png?size=50)](https://github.com/asewnandan)
 [![](https://github.com/radboudir.png?size=50)](https://github.com/radboudir)
+[![](https://github.com/alilowni.png?size=50)](https://github.com/alilowni)
 [![](https://github.com/tin900.png?size=50)](https://github.com/tin900)
 [![](https://github.com/Tomeriko96.png?size=50)](https://github.com/Tomeriko96)
+[![](https://github.com/jorngithub.png?size=50)](https://github.com/Tomeriko96jorngithub)
 
 
 ## Getting Help
