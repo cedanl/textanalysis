@@ -90,6 +90,7 @@ Special thanks to @[radboudir](https://github.com/radboudir) who started the pro
 
 
 ## Using the Application
+move to usage doc
 
 - Use the Word Cloud option for visualizing key terms in shorter surveys.
     
