@@ -1,7 +1,9 @@
 ![GitHub Last Commit](https://badgen.net/github/last-commit/cedanl/textanalysis)
-# Text Analysis
 
-Advanced text analysis tool for topic modeling and visualization, built with Python and Streamlit.
+# 🔍 Text Analysis 
+
+Advanced text analysis tool for topic modeling and visualization.
+
 
 [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
 [![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0)](#)
@@ -154,5 +156,4 @@ Special thanks to @[radboudir](https://github.com/radboudir) who started the pro
 If you encounter any issues or need further assistance, please feel free to contact amir.khodaie@ru.nl
 
 
-
-
+[Back to top](#top)
