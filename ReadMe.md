@@ -1,30 +1,37 @@
+
+![Works Offline](https://img.shields.io/badge/Works_Offline-Yes-success)
 ![GitHub Last Commit](https://badgen.net/github/last-commit/cedanl/textanalysis)
 
-# 🔍 Text Analysis 
+# Text Analysis
+###### Built with ❤︎ by [CEDA](https://github.com/cedanl) and [Contributors](https://github.com/cedanl/textanalysis/graphs/contributors)
 
-Advanced text analysis tool for topic modeling and visualization.
-
-
+###### Compatible for
 [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
 [![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0)](#)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
 
+<div align="center"> <strong>🔍 Advanced Text Analysis Tool 📊</strong>
+    <br> Powerful Python-based topic modeling with a user-friendly Streamlit interface.
+    <br>
+    <sub>Ideal for long responses and short surveys with word cloud visualization.</sub> </div> 
+<br>
 
-![Works Offline](https://img.shields.io/badge/Works_Offline-Yes-success)
 
 
-![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
-![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
-![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=fff&style=flat)
+
+
 
 
 
 ## Features
 - **Topic Modeling**: Analyze extensive text data
 - **Word Cloud**: Visualize most frequent terms in datasets
-- **Streamlit Interface**: User-friendly web-based interface
-- **uv Package Management**: Fast and efficient dependency management
 
+
+###### Developed with
+![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
+![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
+![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=fff&style=flat)
 
 ## Demo
 
@@ -43,7 +50,6 @@ Advanced text analysis tool for topic modeling and visualization.
 
 ## Installation
 
-# Roadmap
 
 # Contributing
 
@@ -59,48 +65,6 @@ If you find this project helpful, please consider:
 
 # License
 This project is licensed under the terms of the xxx license (link).
-
-
-
-#
-
-
-<p align="center"><img src="src/assets/npuls_logo.png" alt="CEDA"></p>
-
-<h1 align="center">Npuls-CEDA | Text Analysis</h1>
-
-<div align="center"> <strong>🔍 Advanced Text Analysis Tool 📊</strong>
-    <br> Powerful Python-based topic modeling with a user-friendly Streamlit interface.
-    <br>
-    <sub>Ideal for long responses and short surveys with word cloud visualization.</sub> </div> 
-
-<br>
-
-<div align="center">
-  <h3>
-    <a href="https://community-data-ai.npuls.nl/groups/view/44d20066-53a8-48c2-b4e9-be348e05d273/project-center-for-educational-data-analytics-ceda">
-      Website
-    </a>
-    <span> | </span>
-    <a href="https://github.com/cedanl/textanalysis#features">
-      Features
-    </a>
-    <span> | </span>
-    <a href="https://github.com/cedanl/textanalysis#download-and-installation">
-      Downloads
-    </a>
-    <span> | </span>
-    <a href="https://github.com/cedanl/textanalysis#development">
-      Development
-    </a>
-    <span> | </span>
-    <a href="https://github.com/cedanl/textanalysis#contribution">
-      Contribution
-    </a>
-  </h3>
-</div>
-<br />
-
 
 # Prerequisites
 
