@@ -3,13 +3,14 @@
 ![GitHub Last Commit](https://badgen.net/github/last-commit/cedanl/textanalysis)
 
 # Text Analysis
+
 ###### Built with ❤︎ by [CEDA](https://github.com/cedanl) and [Contributors](https://github.com/cedanl/textanalysis/graphs/contributors)
 
-###### Compatible for
+###### Compatible with
 [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
 [![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0)](#)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
-
+x
 <div align="center"> <strong>🔍 Advanced Text Analysis Tool 📊</strong>
     <br> Powerful Python-based topic modeling with a user-friendly Streamlit interface.
     <br>
