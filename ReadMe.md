@@ -4,8 +4,8 @@
 [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
 ![GitHub Last Commit](https://badgen.net/github/last-commit/cedanl/textanalysis)
 
-# Text Analysis <img src="src/assets/npuls_logo.svg" alt="Npuls Logo" width="50" style="vertical-align: middle; margin-right: 10px;">
-<strong>🔍 Advanced Text Analysis Tool</strong>.
+# 🔍 Text Analysis
+<strong>Advanced Text Analysis Tool</strong>.
 > Powerful Python-based topic modeling with a user-friendly Streamlit interface. Ideal for long responses and short surveys with word cloud visualization.
 
 
@@ -28,7 +28,7 @@
 ## Demo
 Insert Video Here
 
-# Quick Start
+# ⚡ Quick Start
 
 ## Prerequisites
 1. Install uv on your system:
