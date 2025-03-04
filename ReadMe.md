@@ -1,24 +1,39 @@
+![GitHub Last Commit](https://badgen.net/github/last-commit/cedanl/textanalysis)
 # Text Analysis
 
 Advanced text analysis tool for topic modeling and visualization, built with Python and Streamlit.
 
+[![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
+[![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0)](#)
+[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
+
+
 ![Works Offline](https://img.shields.io/badge/Works_Offline-Yes-success)
-![GitHub last commit](https://img.shields.io/github/last-commit/cedanl/textanalysis)
-![GitHub License](https://img.shields.io/github/license/cedanl/eencijfer)
+
+
+![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
+![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
+![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=fff&style=flat)
+
 
 
 ## Features
+- **Topic Modeling**: Analyze extensive text data
+- **Word Cloud**: Visualize most frequent terms in datasets
+- **Streamlit Interface**: User-friendly web-based interface
+- **uv Package Management**: Fast and efficient dependency management
 
 
+## Demo
 
-# Text Analysis
-- Subtext
-- Badges
+# Contributers
+![Streamlit Badge](https://badgen.net/github/contributors/cedanl/textanalysis)
 
-- Description
-## Features
-- Features
-- Demo Video
+
+# License
+![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis)
+
+
 
 # Getting Started
 
@@ -41,8 +56,7 @@ If you find this project helpful, please consider:
 
 
 # License
-Distributed under the Unlicense License. See LICENSE.txt for more information.
-
+This project is licensed under the terms of the xxx license (link).
 
 
 
@@ -83,25 +97,8 @@ Distributed under the Unlicense License. See LICENSE.txt for more information.
     </a>
   </h3>
 </div>
-
-<div align="center">
-  <sub>The ultimate text analysis tool. Built with ❤︎ by
-    <a href="https://github.com/cedanl">CEDA</a> and
-    <a href="https://github.com/cedanl/textanalysis/graphs/contributors">
-      contributors
-    </a>
-    .
-  </sub>
-</div>
-
 <br />
 
-# Features
-
-- **Topic Modeling**: Analyze extensive text data
-- **Word Cloud**: Visualize most frequent terms in datasets
-- **Streamlit Interface**: User-friendly web-based interface
-- **uv Package Management**: Fast and efficient dependency management
 
 # Prerequisites
 
