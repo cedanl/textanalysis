@@ -1,14 +1,15 @@
 
-![Works Offline](https://img.shields.io/badge/Works_Offline-Yes-success)
-![GitHub Last Commit](https://badgen.net/github/last-commit/cedanl/textanalysis)
-
-# CEDA | Text Analysis
-<strong>🔍 Advanced Text Analysis Tool</strong>. Powerful Python-based topic modeling with a user-friendly Streamlit interface. Ideal for long responses and short surveys with word cloud visualization.
-
-
 [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
 [![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0)](#)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
+![GitHub Last Commit](https://badgen.net/github/last-commit/cedanl/textanalysis)
+
+# <img src="src/assets/npuls_logo.svg" alt="Npuls Logo" width="50" style="vertical-align: middle; margin-right: 10px;"> Text Analysis
+<strong>🔍 Advanced Text Analysis Tool</strong>.
+> Powerful Python-based topic modeling with a user-friendly Streamlit interface. Ideal for long responses and short surveys with word cloud visualization.
+
+
+
 
 ###### Built with ❤︎ by [CEDA](https://github.com/cedanl) and [Contributors](https://github.com/cedanl/textanalysis/graphs/contributors)
 
