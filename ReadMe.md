@@ -1,3 +1,54 @@
+# Text Analysis
+
+Advanced text analysis tool for topic modeling and visualization, built with Python and Streamlit.
+
+![Works Offline](https://img.shields.io/badge/Works_Offline-Yes-success)
+![GitHub last commit](https://img.shields.io/github/last-commit/cedanl/textanalysis)
+![GitHub License](https://img.shields.io/github/license/cedanl/eencijfer)
+
+
+## Features
+
+
+
+# Text Analysis
+- Subtext
+- Badges
+
+- Description
+## Features
+- Features
+- Demo Video
+
+# Getting Started
+
+## Prerequisites
+
+## Installation
+
+# Roadmap
+
+# Contributing
+
+# Credits / Acknowledgements
+
+# Support
+If you find this project helpful, please consider:
+- ⭐ Starring the repo
+- 🐛 Reporting bugs
+- 💡 Suggesting features
+- 💻 Contributing code
+
+
+# License
+Distributed under the Unlicense License. See LICENSE.txt for more information.
+
+
+
+
+#
+
+
 <p align="center"><img src="src/assets/npuls_logo.png" alt="CEDA"></p>
 
 <h1 align="center">Npuls-CEDA | Text Analysis</h1>
