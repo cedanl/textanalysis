@@ -29,10 +29,18 @@ Text Analysis provides researchers and analysts with powerful natural language p
 
 [Watch the demo video](link-to-demo) to see Text Analysis in action.
 
-# Installation
+## 🚀 Installation
 > [!WARNING]
 > Do not skip these steps if this is your first time using this repository. It will not work without them.
 
+**1. Clone or Download the Repository**
+
+```bash
+# Clone the repository
+git clone https://github.com/cedanl/textanalysis.git
+cd textanalysis
+
+# Or download ZIP from the GitHub "Code" button
 ## 1. Clone or Download the Repository  
 
 ### Option 1: Clone the Repository (Recommended)  
@@ -73,15 +81,16 @@ uv self update
 See the [installation documentation](https://docs.astral.sh/uv/getting-started/installation/) for
 details and alternative installation methods.
 
-## Run Locally (Streamlit)
+# ▶️ Run Locally
 Open a terminal in your local `textanalysis` folder and 
-start the Streamlit app by running:
+start the Streamlit app:
 
 ```
 uv run streamlit run src/main.py
 ```
 
-This will open the application in your default web browser.
+<strong>Note</strong>: The app will open automatically in your default web browser.
+
 
 # Support
 If you find this project helpful, please consider:
@@ -92,7 +101,7 @@ If you find this project helpful, please consider:
 
 If you encounter any issues or need further assistance, please feel free to contact amir.khodaie@ru.nl
 
-# Acknowledgements
+# 🙏 Acknowledgements
 Special thanks to @[radboudir](https://github.com/radboudir) who started the project.
 
 # Contributors
