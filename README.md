@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/github/license/cedanl/textanalysis" alt="GitHub License">
   </p>
 
-  <p>Insert 🎬 Demo Video</p>
+  <p>🎬 Demo Video (Coming Soon!)</p>
 </div>
 
 ## 📋 Overview
@@ -89,7 +89,7 @@ uv run streamlit run src/main.py
 
 That's it! The app will automatically launch in your default web browser. If you've completed all the steps in the First Time Setup correctly, this is the **only command** you'll need going forward.
 
-> **Pro Tip**: Create a shortcut or alias for this command to start the app even faster next time!
+> **Pro Tip**: Create a shortcut: `.bat` file (Windows) or `.sh` script (macOS/Linux)
 
 Happy analyzing! ✨📊📝
 
