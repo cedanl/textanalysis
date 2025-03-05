@@ -31,34 +31,37 @@ Text Analysis provides researchers and analysts with powerful natural language p
 
 ## 🚀 Installation
 > [!WARNING]
-> Do not skip these steps if this is your first time using this repository. It will not work without them.
+> These steps are required for first-time setup.
 
-### 1. Clone or Download the Repository
 
+
+### 1. Get the Repository
+
+#### Option A: Clone with Git
 ```bash
 git clone https://github.com/cedanl/textanalysis.git
 cd textanalysis
 ```
-*or*
 
+#### Option B: Download ZIP
 [![Download Repository](https://img.shields.io/badge/Download-Repository-green)](https://github.com/cedanl/textanalysis/archive/refs/heads/main.zip)
 
-<strong>Note:</strong> after downloading extract the ZIP file and navigate into the folder.
+After downloading extract the ZIP file and navigate into the folder.
 
-### 2. Install `uv`
-If you don't have `uv`, you can install it using the standalone installers:
+### 2. Install ![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
 
-```bash
-# On macOS and Linux.
+#### MacOS & Linux 
+```powershell
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-```bash
-# On Windows.
+#### Windows
+```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
+Close and reopen your terminal after installation.
 
-If installed via the standalone installer, uv can update itself to the latest version:
+Verify installation:
 
 ```bash
 uv self update
@@ -67,7 +70,7 @@ uv self update
 See the [installation documentation](https://docs.astral.sh/uv/getting-started/installation/) for
 details and alternative installation methods.
 
-# ▶️ Run Locally
+## 🏃‍♂️‍➡️ Run Locally
 Open a terminal in your local `textanalysis` folder and 
 start the Streamlit app:
 
@@ -78,7 +81,7 @@ uv run streamlit run src/main.py
 <strong>Note</strong>: The app will open automatically in your default web browser.
 
 
-# Support
+## Support
 If you find this project helpful, please consider:
 - ⭐ Starring the repo
 - 🐛 Reporting bugs
@@ -87,10 +90,10 @@ If you find this project helpful, please consider:
 
 If you encounter any issues or need further assistance, please feel free to contact amir.khodaie@ru.nl
 
-# 🙏 Acknowledgements
+## 🙏 Acknowledgements
 Special thanks to @[radboudir](https://github.com/radboudir) who started the project.
 
-# Contributors
+## Contributors
 
 Thank you to all the people who have already contributed to textanalysis [contributors](https://github.com/cedanl/textanalysis/graphs/contributors)].
 
@@ -104,7 +107,7 @@ Thank you to all the people who have already contributed to textanalysis [contri
 [![](https://github.com/jorngithub.png?size=50)](https://github.com/Tomeriko96jorngithub)
 
 
-# License
+## License
 ![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis) 
 
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
