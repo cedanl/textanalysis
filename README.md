@@ -10,6 +10,8 @@
 ![Contributors](https://badgen.net/github/contributors/cedanl/textanalysis)
 ![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis)
 
+Insert 🎬 Demo Video to see Text Analysis in action.
+
 ## 📋 Overview
 
 Text Analysis provides researchers and analysts with powerful natural language processing capabilities, helping you uncover patterns and insights in text data. Particularly effective for analyzing:
@@ -24,10 +26,6 @@ Text Analysis provides researchers and analysts with powerful natural language p
 - **Word Cloud Visualization**: Generate interactive visualizations of term frequency
 - **Sentiment Analysis**: Quantify emotional tone and polarity in text data
 - **User-friendly Interface**: Streamlit-based UI requiring no coding knowledge
-
-## 🎬 Demo
-
-[Watch the demo video](link-to-demo) to see Text Analysis in action.
 
 ## 🚀 Installation
 > [!WARNING]
