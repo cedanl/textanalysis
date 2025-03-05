@@ -1,4 +1,4 @@
-[![Braille fonts](https://see.fontimg.com/api/rf5/DOeDd/MGE4NTM1Njg3NjZhNDZhZTgwNTE0MjE5YzUxMzA0OTgudHRm/VEVYVCBBTkFMWVNJUw/braille-cc0.png?r=dw&h=81&w=1250&fg=EF7114&bg=090909&s=65)](https://www.fontspace.com/category/braille)
+[![Braille fonts](https://see.fontimg.com/api/rf5/DOeDd/MGE4NTM1Njg3NjZhNDZhZTgwNTE0MjE5YzUxMzA0OTgudHRm/VEVYVCBBTkFMWVNJUw/braille-cc0.png?r=dw&h=81&w=1250&fg=00B17E&bg=000000&s=65)](https://www.fontspace.com/category/braille)
 # Text Analysis
 
 > 🔍 An advanced Python-based text analytics tool with intuitive visualization capabilities.
@@ -33,23 +33,19 @@ Text Analysis provides researchers and analysts with powerful natural language p
 > [!WARNING]
 > Do not skip these steps if this is your first time using this repository. It will not work without them.
 
-**1. Clone or Download the Repository**
+### 1. Clone or Download the Repository
 
 ```bash
-# Clone the repository
 git clone https://github.com/cedanl/textanalysis.git
 cd textanalysis
-
 ```
-Or 
+*or*
 
-[![Download Repo](https://img.shields.io/badge/Download-Repository-green)](https://github.com/cedanl/textanalysis/archive/refs/heads/main.zip)
+[![Download Repository](https://img.shields.io/badge/Download-Repository-green)](https://github.com/cedanl/textanalysis/archive/refs/heads/main.zip)
 
-[![Download ZIP](https://img.shields.io/badge/Download-ZIP-green)](https://github.com/username/repository/archive/refs/heads/main.zip)
- from the GitHub "Code" button and extract the ZIP file and navigate into the folder.
+<strong>Note:</strong> after downloading extract the ZIP file and navigate into the folder.
 
-## 2. Install `uv`
-
+### 2. Install `uv`
 If you don't have `uv`, you can install it using the standalone installers:
 
 ```bash
@@ -110,6 +106,10 @@ Thank you to all the people who have already contributed to textanalysis [contri
 
 # License
 ![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis) 
+
+![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
+![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
+![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=fff&style=flat)
 
 
 [Back to top](#top)
