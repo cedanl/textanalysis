@@ -40,23 +40,13 @@ Text Analysis provides researchers and analysts with powerful natural language p
 git clone https://github.com/cedanl/textanalysis.git
 cd textanalysis
 
-# Or download ZIP from the GitHub "Code" button
-## 1. Clone or Download the Repository  
+```
+Or 
 
-### Option 1: Clone the Repository (Recommended)  
+[![Download Repo](https://img.shields.io/badge/Download-Repository-green)](https://github.com/cedanl/textanalysis/archive/refs/heads/main.zip)
 
-If you have Git installed, you can clone this repository using:  
-
-```sh
-git clone https://github.com/cedanl/textanalysis.git
-cd textanalysis
-````
-
-### Option 2: Download the Repository
-
-1. Go to [textanalysis](https://github.com/cedanl/textanalysis).
-2. Click **Code** > **Download ZIP**.
-3. Extract the ZIP file and navigate into the folder.
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-green)](https://github.com/username/repository/archive/refs/heads/main.zip)
+ from the GitHub "Code" button and extract the ZIP file and navigate into the folder.
 
 ## 2. Install `uv`
 
