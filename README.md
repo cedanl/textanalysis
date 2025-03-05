@@ -60,7 +60,7 @@ After downloading extract the ZIP file and navigate into the folder.
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-#### Windows (Powershell or Windows Terminal)
+#### Windows (Powershell or [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?hl=nl-NL&gl=NL))
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
@@ -86,7 +86,7 @@ uv run streamlit run src/main.py
 <strong>Note</strong>: The app will open automatically in your default web browser.
 
 
-## Support
+## 🤲 Support
 If you find this project helpful, please consider:
 - ⭐ Starring the repo
 - 🐛 Reporting bugs
@@ -98,7 +98,7 @@ If you encounter any issues or need further assistance, please feel free to cont
 ## 🙏 Acknowledgements
 Special thanks to @[radboudir](https://github.com/radboudir) who started the project.
 
-## Contributors
+## 🫂 Contributors
 Thank you to all the [people](https://github.com/cedanl/textanalysis/graphs/contributors) who have already contributed to textanalysis.
 
 
@@ -110,7 +110,7 @@ Thank you to all the [people](https://github.com/cedanl/textanalysis/graphs/cont
 [![](https://github.com/jorngithub.png?size=50)](https://github.com/Tomeriko96jorngithub)
 
 
-## License
+## 📄 License
 ![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis) 
 
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
