@@ -102,7 +102,7 @@ If you find this project helpful, please consider:
 - 💡 Suggesting features
 - 💻 Contributing code
 
-If you encounter any issues or need further assistance, please feel free to contact amir.khodaie@ru.nl
+If you encounter any issues or need further assistance, please feel free to [open an issue](https://github.com/cedanl/textanalysis/issues) or contact amir.khodaie@ru.nl
 
 ## 🙏 Acknowledgements
 <strong>Special thanks to:</strong>
