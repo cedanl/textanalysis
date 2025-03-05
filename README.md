@@ -1,16 +1,21 @@
 [![Braille fonts](https://see.fontimg.com/api/rf5/DOeDd/MGE4NTM1Njg3NjZhNDZhZTgwNTE0MjE5YzUxMzA0OTgudHRm/VEVYVCBBTkFMWVNJUw/braille-cc0.png?r=dw&h=81&w=1250&fg=00B17E&bg=000000&s=65)](https://www.fontspace.com/category/braille)
-# Text Analysis
 
-> 🔍 An advanced Python-based text analytics tool with intuitive visualization capabilities.
+<div align="center">
+  <h1>Text Analysis</h1>
 
-[![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
-[![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0)](#)
-[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
-![GitHub Last Commit](https://badgen.net/github/last-commit/cedanl/textanalysis)
-![Contributors](https://badgen.net/github/contributors/cedanl/textanalysis)
-![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis)
+  <p>🔍 An advanced Python-based text analytics tool with intuitive visualization capabilities.</p>
 
-Insert 🎬 Demo Video to see Text Analysis in action.
+  <p>
+    <a href="#"><img src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white" alt="Windows"></a>
+    <a href="#"><img src="https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0" alt="macOS"></a>
+    <a href="#"><img src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black" alt="Linux"></a>
+    <img src="https://badgen.net/github/last-commit/cedanl/textanalysis" alt="GitHub Last Commit">
+    <img src="https://badgen.net/github/contributors/cedanl/textanalysis" alt="Contributors">
+    <img src="https://img.shields.io/github/license/cedanl/textanalysis" alt="GitHub License">
+  </p>
+
+  <p>Insert 🎬 Demo Video</p>
+</div>
 
 ## 📋 Overview
 
