@@ -95,6 +95,11 @@ Happy analyzing! ✨📊📝
 
 <br>
 
+## 🛠️ Built With
+![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
+![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=fff&style=flat) 
+![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
+
 ## 🤲 Support
 If you find this project helpful, please consider:
 - ⭐ Starring the repo
@@ -121,11 +126,6 @@ Thank you to all the [people](https://github.com/cedanl/textanalysis/graphs/cont
 [![](https://github.com/tin900.png?size=50)](https://github.com/tin900)
 [![](https://github.com/Tomeriko96.png?size=50)](https://github.com/Tomeriko96)
 [![](https://github.com/jorngithub.png?size=50)](https://github.com/Tomeriko96jorngithub)
-
-## 🛠️ Built With
-![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
-![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=fff&style=flat) 
-![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
 
 ## 📄 License
 ![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis) 
