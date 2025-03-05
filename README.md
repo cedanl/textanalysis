@@ -1,4 +1,4 @@
-[![Braille fonts](https://see.fontimg.com/api/rf5/DOeDd/MGE4NTM1Njg3NjZhNDZhZTgwNTE0MjE5YzUxMzA0OTgudHRm/VEVYVCBBTkFMWVNJUw/braille-cc0.png?r=dw&h=81&w=1250&fg=00B17E&bg=000000&s=65)](https://www.fontspace.com/category/braille)
+![Braille fonts](https://see.fontimg.com/api/rf5/DOeDd/MGE4NTM1Njg3NjZhNDZhZTgwNTE0MjE5YzUxMzA0OTgudHRm/VEVYVCBBTkFMWVNJUw/braille-cc0.png?r=dw&h=81&w=1250&fg=00B17E&bg=000000&s=65)
 
 <div align="center">
   <h1>Text Analysis</h1>
@@ -40,7 +40,7 @@ Text Analysis provides researchers and analysts with powerful natural language p
 
 ### 1. Get the Repository
 
-#### Option A: Clone with Git
+#### Option A: Clone with Git (or Github Desktop)
 ```bash
 git clone https://github.com/cedanl/textanalysis.git
 cd textanalysis
@@ -51,14 +51,14 @@ cd textanalysis
 
 After downloading extract the ZIP file and navigate into the folder.
 
-### 2. Install ![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
+### 2. Install [![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)](https://docs.astral.sh/uv/)
 
-#### MacOS & Linux 
+#### MacOS & Linux (Terminal)
 ```powershell
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-#### Windows
+#### Windows (Powershell or Windows Terminal)
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
@@ -73,7 +73,7 @@ uv self update
 See the [installation documentation](https://docs.astral.sh/uv/getting-started/installation/) for
 details and alternative installation methods.
 
-## 🏃‍♂️‍➡️ Run Locally
+## 🏃‍♂️‍➡️ Running the Application
 Open a terminal in your local `textanalysis` folder and 
 start the Streamlit app:
 
@@ -97,10 +97,8 @@ If you encounter any issues or need further assistance, please feel free to cont
 Special thanks to @[radboudir](https://github.com/radboudir) who started the project.
 
 ## Contributors
+Thank you to all the [people](https://github.com/cedanl/textanalysis/graphs/contributors) who have already contributed to textanalysis.
 
-Thank you to all the people who have already contributed to textanalysis [contributors](https://github.com/cedanl/textanalysis/graphs/contributors)].
-
-![Streamlit Badge](https://badgen.net/github/contributors/cedanl/textanalysis)
 
 [![](https://github.com/asewnandan.png?size=50)](https://github.com/asewnandan)
 [![](https://github.com/radboudir.png?size=50)](https://github.com/radboudir)
