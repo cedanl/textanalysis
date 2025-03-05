@@ -120,6 +120,3 @@ Thank you to all the [people](https://github.com/cedanl/textanalysis/graphs/cont
 
 ## 📄 License
 ![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis) 
-
-
-[Back to top](#top)
