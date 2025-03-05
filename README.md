@@ -1,6 +1,7 @@
-# 🔍 Text Analysis
+[![Braille fonts](https://see.fontimg.com/api/rf5/DOeDd/MGE4NTM1Njg3NjZhNDZhZTgwNTE0MjE5YzUxMzA0OTgudHRm/VEVYVCBBTkFMWVNJUw/braille-cc0.png?r=dw&h=81&w=1250&fg=EF7114&bg=090909&s=65)](https://www.fontspace.com/category/braille)
+# Text Analysis
 
-An advanced Python-based text analytics tool with intuitive visualization capabilities.
+🔍 An advanced Python-based text analytics tool with intuitive visualization capabilities.
 
 [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
 [![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0)](#)
