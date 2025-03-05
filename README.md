@@ -36,6 +36,10 @@ Text Analysis provides researchers and analysts with powerful natural language p
 > [!WARNING]
 > These steps are required for first-time setup.
 
+> [!TIP]
+> Save the repository in a Projects/CEDA folder on your main drive for quick access.
+
+
 ### 1. Get the Repository
 
 #### Option A: Clone with Git (or Github Desktop)
