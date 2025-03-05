@@ -34,7 +34,7 @@ Text Analysis provides researchers and analysts with powerful natural language p
 
 ## 🚀 First Time Setup
 > [!WARNING]
-> Do not skip this step if this is your first time using this appl
+> Do not skip these steps if this is your first time using this application. It will not work without them.
 
 > [!TIP]
 > Save the repository in a Projects/CEDA folder on your main drive for quick access.
