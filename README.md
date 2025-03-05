@@ -26,15 +26,15 @@ Text Analysis provides researchers and analysts with powerful natural language p
 - Student feedback
 
 ## ✨ Features
+- [x] **Topic Modeling**: Discover hidden themes in your text corpus using advanced algorithms
+- [x] **Word Cloud Visualization**: Generate interactive visualizations of term frequency
+- [x] **Sentiment Analysis**: Quantify emotional tone and polarity in text data
+- [ ] **User-friendly Interface**: Streamlit-based UI requiring no coding knowledge
+- [x] **`uv` Powered Setup**: One-click installation that installs Python and all dependencies in seconds - no technical knowledge needed!
 
-- **Topic Modeling**: Discover hidden themes in your text corpus using advanced algorithms
-- **Word Cloud Visualization**: Generate interactive visualizations of term frequency
-- **Sentiment Analysis**: Quantify emotional tone and polarity in text data
-- **User-friendly Interface**: Streamlit-based UI requiring no coding knowledge
-
-## 🚀 Installation
+## 🚀 First Time Setup
 > [!WARNING]
-> These steps are required for first-time setup.
+> Do not skip this step if this is your first time using this appl
 
 > [!TIP]
 > Save the repository in a Projects/CEDA folder on your main drive for quick access.
@@ -42,7 +42,7 @@ Text Analysis provides researchers and analysts with powerful natural language p
 
 ### 1. Get the Repository
 
-#### Option A: Clone with Git (or Github Desktop)
+#### Option A: Clone with Git (or [Github Desktop](https://github.com/apps/desktop))
 ```bash
 git clone https://github.com/cedanl/textanalysis.git
 cd textanalysis
@@ -56,7 +56,7 @@ After downloading extract the ZIP file and navigate into the folder.
 ### 2. Install [![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)](https://docs.astral.sh/uv/)
 
 #### MacOS & Linux (Terminal)
-```powershell
+```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
@@ -96,7 +96,11 @@ If you find this project helpful, please consider:
 If you encounter any issues or need further assistance, please feel free to contact amir.khodaie@ru.nl
 
 ## 🙏 Acknowledgements
-Special thanks to @[radboudir](https://github.com/radboudir) who started the project.
+<strong>Special thanks to:</strong>
+- [Amir Khodaie](https://github.com/radboudir) for starting the project and laying the foundation.
+- [Ash Sewnandan](https://github.com/asewnandan) & [Tomer Iwan](https://github.com/Tomeriko96) for elevating the project to professional standards by creating a complete, user-friendly application with a polished interface and robust architecture.
+- [CEDA & Npuls](https://community-data-ai.npuls.nl/groups/view/44d20066-53a8-48c2-b4e9-be348e05d273/project-center-for-educational-data-analytics-ceda) for making this project possible by providing valuable resources and support.
+
 
 ## 🫂 Contributors
 Thank you to all the [people](https://github.com/cedanl/textanalysis/graphs/contributors) who have already contributed to textanalysis.
@@ -109,13 +113,13 @@ Thank you to all the [people](https://github.com/cedanl/textanalysis/graphs/cont
 [![](https://github.com/Tomeriko96.png?size=50)](https://github.com/Tomeriko96)
 [![](https://github.com/jorngithub.png?size=50)](https://github.com/Tomeriko96jorngithub)
 
+## 🛠️ Built With
+![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
+![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=fff&style=flat) 
+![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
 
 ## 📄 License
 ![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis) 
-
-![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat)
-![uv Badge](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=fff&style=flat)
-![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=fff&style=flat)
 
 
 [Back to top](#top)
