@@ -36,8 +36,6 @@ Text Analysis provides researchers and analysts with powerful natural language p
 > [!WARNING]
 > These steps are required for first-time setup.
 
-
-
 ### 1. Get the Repository
 
 #### Option A: Clone with Git (or Github Desktop)
@@ -64,7 +62,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```
 Close and reopen your terminal after installation.
 
-Verify installation:
+#### Verify installation
 
 ```bash
 uv self update
