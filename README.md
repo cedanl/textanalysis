@@ -32,7 +32,9 @@ Text Analysis provides researchers and analysts with powerful natural language p
 - [ ] **User-friendly Interface**: Streamlit-based UI requiring no coding knowledge
 - [x] **`uv` Powered Setup**: One-click installation that installs Python and all dependencies in seconds - no technical knowledge needed!
 
-## 🚀 First Time Setup
+<br>
+
+## 🔧 First Time Setup
 > [!WARNING]
 > Do not skip these steps if this is your first time using this application. It will not work without them.
 
@@ -75,16 +77,23 @@ uv self update
 See the [installation documentation](https://docs.astral.sh/uv/getting-started/installation/) for
 details and alternative installation methods.
 
-## 🏃‍♂️‍➡️ Running the Application
-Open a terminal in your local `textanalysis` folder and 
-start the Streamlit app:
+<br>
 
-```
+## 🚀 Running the Application
+
+Ready to see the magic happen? With a single command, your text analysis app will spring to life!
+
+```bash
 uv run streamlit run src/main.py
 ```
 
-<strong>Note</strong>: The app will open automatically in your default web browser.
+That's it! The app will automatically launch in your default web browser. If you've completed all the steps in the First Time Setup correctly, this is the **only command** you'll need going forward.
 
+> **Pro Tip**: Create a shortcut or alias for this command to start the app even faster next time!
+
+Happy analyzing! ✨📊📝
+
+<br>
 
 ## 🤲 Support
 If you find this project helpful, please consider:
