@@ -105,7 +105,6 @@ That's it! The app will automatically spring to life in your browser. If you've 
 
 > **Pro Tip**: Create a shortcut: `.bat` file (Windows) or `.sh` script (macOS/Linux)
 
-
 Happy analyzing! ✨📊📝
 
 <br>
