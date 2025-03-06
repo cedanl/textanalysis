@@ -13,5 +13,5 @@
         ]
       }
     },
-    "postStartCommand": "uv run streamlit run src/main.py"
+    "postCreateCommand": "uv run streamlit run src/main.py"
   }
