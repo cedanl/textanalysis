@@ -1,0 +1,59 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environment
+.env
+.env.*
+.venv
+.venv.*
+.python-version
+
+# IDE
+.vscode/
+.spyderproject
+.ropeproject
+
+# OS
+.DS_Store
+src/.DS_Store
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+.devcontainer/

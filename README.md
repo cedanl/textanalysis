@@ -81,13 +81,27 @@ details and alternative installation methods.
 
 ## 🚀 Running the Application
 
-Ready to see the magic happen? With a single command, your text analysis app will spring to life!
+Ready to see the magic happen? Your text analysis app is just one command away! ✨
+
+### First, get to the right spot:
+
+Open a terminal in your `textanalysis` folder - it's super easy!
+- **Windows**: `Shift + Right-click` in folder → `Open in Windows Terminal` 
+- **Mac**: `Right-click` folder → `New Terminal at Folder`
+- **VS Code**: Just click `Terminal` → `New Terminal`
+
+Or simply navigate there:
+```bash
+cd path/to/textanalysis
+```
+
+### Then, launch with a single command:
 
 ```bash
 uv run streamlit run src/main.py
 ```
 
-That's it! The app will automatically launch in your default web browser. If you've completed all the steps in the First Time Setup correctly, this is the **only command** you'll need going forward.
+That's it! The app will automatically spring to life in your browser. If you've completed all the steps in the First Time Setup correctly, this is the **only command** you'll need going forward. 🎉
 
 > **Pro Tip**: Create a shortcut: `.bat` file (Windows) or `.sh` script (macOS/Linux)
 
