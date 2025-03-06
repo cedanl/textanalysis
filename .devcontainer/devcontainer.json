@@ -12,5 +12,6 @@
           "ms-python.vscode-pylance"
         ]
       }
-    }
+    },
+    "postStartCommand": "uv run streamlit run src/main.py"
   }
