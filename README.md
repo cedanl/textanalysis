@@ -141,5 +141,5 @@ Thank you to all the [people](https://github.com/cedanl/textanalysis/graphs/cont
 [![](https://github.com/Tomeriko96.png?size=50)](https://github.com/Tomeriko96)
 [![](https://github.com/jorngithub.png?size=50)](https://github.com/Tomeriko96jorngithub)
 
-## 📄 License
+## 🚦 License
 ![GitHub License](https://img.shields.io/github/license/cedanl/textanalysis) 
