@@ -3,7 +3,7 @@
 <div align="center">
   <h1>Text Analysis</h1>
 
-  <p>🔍 An advanced Python-based text analytics tool with intuitive visualization capabilities.</p>
+  <p>🔍 An advanced text analytics tool with intuitive visualization capabilities.</p>
 
   <p>
     <a href="#"><img src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white" alt="Windows"></a>
@@ -18,6 +18,9 @@
 </div>
 
 ## 📋 Overview
+> [!NOTE]
+> No Python or technical knowledge required! This tool is designed for everyone, regardless of programming experience.
+
 
 Text Analysis provides researchers and analysts with powerful natural language processing capabilities, helping you uncover patterns and insights in text data. Particularly effective for analyzing:
 
