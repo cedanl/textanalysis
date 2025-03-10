@@ -1,17 +1,12 @@
 {
-    "name": "Streamlit Development",
-    "build": {
-      "dockerfile": "Dockerfile",
-      "context": ".."
-    },
-    "forwardPorts": [8501],
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "ms-python.python",
-          "ms-python.vscode-pylance"
-        ]
-      }
-    },
-    "postCreateCommand": "uv run streamlit run src/main.py"
+  "name": "Python Development with uv",
+  "image": "ghcr.io/astral-sh/uv:python3.13-bookworm-slim",
+  "forwardPorts": [8501],
+  // Run commands after container creation
+  "postCreateCommand": "uv sync",
+
+  // Add features like additional tools
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
   }
+}
