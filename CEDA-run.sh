@@ -4,6 +4,7 @@
 ### GENERAL CONFIGURATION
 ################################################################################
 
+### COLORS
 # Define color codes with more professional palette
 GREEN_LOGO='\033[38;5;35m'      # Closest standard green to 00B17E
 TEAL='\033[38;5;37m'            # Success indicators
@@ -16,6 +17,7 @@ WHITE='\033[38;5;255m'          # Primary text
 BOLD='\033[1m'                  # Bold text
 NC='\033[0m'                    # No Color
 
+### LOGO ANIMATION
 # Function for drawing in animation
 draw_ceda() {
     local art=(
@@ -26,6 +28,9 @@ draw_ceda() {
         "╚██████╗███████╗██████╔╝██║  ██║"
         " ╚═════╝╚══════╝╚═════╝ ╚═╝  ╚═╝"
     )
+    
+    # Inspirational tagline
+    local tagline="Bridging institutions, sharing solutions, advancing education."
     
     # Clear screen and hide cursor
     echo -e "\033[2J\033[H\033[?25l"
@@ -38,13 +43,18 @@ draw_ceda() {
         # Print line character by character
         for ((j=0; j<${#line}; j++)); do
             echo -ne "${line:$j:1}"
-            sleep 0.005  # Small delay between characters
+            sleep 0.003  # Small delay between characters
         done
         echo  # New line
     done
     
-    # Show corporate tagline
-    echo -e "\n${GRAY}Porsche Incoming...${NC}\n"
+    # Show tagline with character-by-character animation
+    echo -ne "\n${GRAY}"
+    for ((i=0; i<${#tagline}; i++)); do
+        echo -ne "${tagline:$i:1}"
+        sleep 0.02  # Slightly longer delay for tagline for emphasis
+    done
+    echo -e "${NC}\n"
     
     # Show cursor again
     echo -e "\033[?25h"
@@ -53,6 +63,7 @@ draw_ceda() {
 # Run the animation
 draw_ceda
 
+### STATUS MESSAGES
 # Function to show status messages
 status() {
     echo -e "${GRAY}[${1}] ${2}${NC}"
@@ -74,6 +85,7 @@ info() {
     echo -e "${GRAY}[${BLUE}INFO${GRAY}] ${WHITE}${1}${NC}"
 }
 
+### NAVIGATION
 # Navigate to script directory
 cd "$(dirname "$0")" || {
     error "Failed to navigate to script directory"
@@ -129,18 +141,11 @@ success "uv package manager successfully installed"
 ################################################################################
 status "LAUNCH" "Initializing Streamlit application..."
 
+# Add small credit line (using small font)
+echo -e "\033[38;5;98m[CREDITS] Ash Sewnandan\033[0m"
+
 # Run the Streamlit application
 if ! uv run streamlit run src/main.py; then
     error "Failed to start Streamlit application"
     exit 1
 fi
-
-echo
-info "To exit CEDA platform, press ${BOLD}ENTER${NC}"
-read
-
-# Clear screen on exit for clean termination
-clear
-echo -e "${BLUE}Thank you for using CEDA Text Analysis Platform${NC}"
-echo -e "${GRAY}Session terminated successfully${NC}"
-sleep 1
