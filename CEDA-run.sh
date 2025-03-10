@@ -1,5 +1,9 @@
 #!/bin/bash
 
+################################################################################
+### GENERAL CONFIGURATION
+################################################################################
+
 # Define color codes with more professional palette
 GREEN_LOGO='\033[38;5;35m'      # Closest standard green to 00B17E
 TEAL='\033[38;5;37m'            # Success indicators
@@ -46,6 +50,9 @@ draw_ceda() {
     echo -e "\033[?25h"
 }
 
+# Run the animation
+draw_ceda
+
 # Function to show status messages
 status() {
     echo -e "${GRAY}[${1}] ${2}${NC}"
@@ -67,9 +74,6 @@ info() {
     echo -e "${GRAY}[${BLUE}INFO${GRAY}] ${WHITE}${1}${NC}"
 }
 
-# Run the animation
-draw_ceda
-
 # Navigate to script directory
 cd "$(dirname "$0")" || {
     error "Failed to navigate to script directory"
@@ -84,11 +88,11 @@ status "CHECK" "Verifying uv installation..."
 ################################################################################
 # Check if UV is installed
 if ! command -v uv &> /dev/null; then
-    warning "UV package manager not found. Attempting to install..."
+    warning "uv package manager not found. Attempting to install..."
     
     # Try to install UV
     if curl -LsSf https://astral.sh/uv/install.sh | sh; then
-        success "UV package manager successfully installed"
+        success "uv package manager successfully installed"
         # Ensure the newly installed uv is in PATH
         export PATH="$HOME/.cargo/bin:$PATH"
         
@@ -103,7 +107,7 @@ if ! command -v uv &> /dev/null; then
         fi
     else
         INSTALL_ERROR=$?
-        error "Failed to install UV package manager (exit code: $INSTALL_ERROR)"
+        error "Failed to install uv package manager (exit code: $INSTALL_ERROR)"
         echo -e "${GRAY}Please try one of the following:${NC}"
         echo -e "${GRAY}  ▸ Run the CEDA-run.sh script with admin privileges:${NC}"
         echo -e "${GRAY}    sudo curl -LsSf https://astral.sh/uv/install.sh | sh${NC}"
@@ -118,7 +122,7 @@ if ! command -v uv &> /dev/null; then
     fi
 fi
 
-success "Environment verification complete"
+success "uv package manager successfully installed"
 
 ################################################################################
 ### STREAMLIT
