@@ -10,3 +10,6 @@
     "ghcr.io/devcontainers/features/git:1": {}
   }
 }
+
+// Bugs - Ash
+// uv run in codespaces na uv sync download soms de packages opnieuw?
