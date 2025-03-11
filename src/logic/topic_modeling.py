@@ -96,11 +96,11 @@ def fit_topic_model(df, column_of_interest, min_topic_size, optimal_topics):
     dominant_lang = detect_language(df, column_of_interest)
     embedding_model = pick_embedding_model(dominant_lang)
     
-    nr_topics = optimal_topics if isinstance(optimal_topics, int) else "auto"
+    desired_nr_topics = optimal_topics if isinstance(optimal_topics, int) else "auto"
     
-    umap_model = UMAP(n_neighbors=10, n_components=3, metric='cosine', random_state=42)
-    hdbscan_model = HDBSCAN(min_cluster_size=nr_topics, metric='euclidean', cluster_selection_method='eom', prediction_data=True)
-
+    umap_model = UMAP(n_neighbors=4, n_components=2, metric='cosine', random_state=42)
+    hdbscan_model = HDBSCAN(min_cluster_size=4, min_samples=4, metric='euclidean', cluster_selection_method='eom', prediction_data=True)
+    
     topic_model = BERTopic(
         embedding_model=embedding_model, 
         min_topic_size=min_topic_size, 
@@ -112,6 +112,10 @@ def fit_topic_model(df, column_of_interest, min_topic_size, optimal_topics):
     documents = df[column_of_interest].to_list()
     topics, probabilities = topic_model.fit_transform(documents)
     
+    if desired_nr_topics != "auto":
+        topic_model = topic_model.reduce_topics(documents, nr_topics=desired_nr_topics)
+        topics = topic_model.transform(documents)[0]
+
     return topic_model, topics, probabilities
 
 def generate_topic_summary(topic_model):
