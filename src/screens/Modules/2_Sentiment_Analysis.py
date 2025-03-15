@@ -23,23 +23,27 @@ st.markdown(
 # Display or edit DataFrame if available
 if st.session_state.df is not None:
     st.session_state.df = st.data_editor(st.session_state.df, key="main_data_editor")
-    
+
     # Column selection for sentiment analysis
     columns = st.session_state.df.columns
-    selected_column = st.selectbox("Select a column for Sentiment Analysis", columns, key="sentiment_column_select")
-    
+    selected_column = st.selectbox(
+        "Select a column for Sentiment Analysis", columns, key="sentiment_column_select"
+    )
+
     if st.button("Run Sentiment Analysis"):
         try:
             # Perform sentiment analysis
-            st.session_state.df = perform_sentiment_analysis(st.session_state.df, selected_column)
-            
+            st.session_state.df = perform_sentiment_analysis(
+                st.session_state.df, selected_column
+            )
+
             # Display results
             st.write("Sentiment Analysis Results:")
             st.dataframe(st.session_state.df)
-            
+
             # Visualize results
             # visualize_sentiment(st.session_state.df)
-            
+
         except Exception as e:
             st.error(f"Error performing sentiment analysis: {e}")
 else:

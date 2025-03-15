@@ -5,32 +5,42 @@ import pandas as pd
 from logic.remove_stop_words import remove_stopwords
 from collections import Counter
 
+
 def get_word_frequencies(text):
     words = text.lower().split()
     return Counter(words)
+
 
 def generate_wordcloud():
     if st.session_state.df is not None:
         correct_columns = st.session_state.df.columns
 
-        selected_column = st.selectbox("Select a column for Word Cloud", correct_columns, key="wordcloud_column_select")
+        selected_column = st.selectbox(
+            "Select a column for Word Cloud",
+            correct_columns,
+            key="wordcloud_column_select",
+        )
 
-        remove_stopwords_option = st.checkbox("Remove stop words", key="remove_stopwords_checkbox")
+        remove_stopwords_option = st.checkbox(
+            "Remove stop words", key="remove_stopwords_checkbox"
+        )
 
         # Initialize session state variables if they don't exist
-        if 'processed_text' not in st.session_state:
+        if "processed_text" not in st.session_state:
             st.session_state.processed_text = ""
-        if 'word_freq' not in st.session_state:
+        if "word_freq" not in st.session_state:
             st.session_state.word_freq = Counter()
 
         if st.button("Process Text"):
             try:
                 column_data = st.session_state.df[selected_column]
-                
+
                 if isinstance(column_data, pd.Series):
-                    text = ' '.join(column_data.dropna().astype(str))
+                    text = " ".join(column_data.dropna().astype(str))
                 else:
-                    text = ' '.join([str(item) for item in column_data if pd.notna(item)])
+                    text = " ".join(
+                        [str(item) for item in column_data if pd.notna(item)]
+                    )
 
                 if remove_stopwords_option:
                     text = remove_stopwords(text)
@@ -51,9 +61,11 @@ def generate_wordcloud():
             st.write(top_50_words)
 
             # Allow user to select multiple words to exclude from top 50
-            words_to_exclude = st.multiselect("Select words to exclude:", 
-                                              options=list(top_50_words.keys()),
-                                              key="words_to_exclude")
+            words_to_exclude = st.multiselect(
+                "Select words to exclude:",
+                options=list(top_50_words.keys()),
+                key="words_to_exclude",
+            )
 
             if st.button("Generate Word Cloud"):
                 try:
@@ -62,12 +74,14 @@ def generate_wordcloud():
 
                     # Remove excluded words
                     for word in words_to_exclude:
-                        filtered_text = filtered_text.replace(word, '')
+                        filtered_text = filtered_text.replace(word, "")
 
-                    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(filtered_text)
+                    wordcloud = WordCloud(
+                        width=800, height=400, background_color="white"
+                    ).generate(filtered_text)
 
                     fig, ax = plt.subplots(figsize=(10, 5))
-                    ax.imshow(wordcloud, interpolation='bilinear')
+                    ax.imshow(wordcloud, interpolation="bilinear")
                     ax.axis("off")
                     st.pyplot(fig)
 

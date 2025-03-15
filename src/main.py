@@ -22,16 +22,15 @@ grouped_pages = group_pages_by_subdirectory(pages)
 # Create the navigation structure
 pg = st.navigation(grouped_pages)
 
-# Run File Handler in Sidebar            
-if __name__ == '__main__':
+# Run File Handler in Sidebar
+if __name__ == "__main__":
     file_handler()
 
 # Add Logo
-LOGO_URL_LARGE = 'src/assets/npuls_logo.png'
+LOGO_URL_LARGE = "src/assets/npuls_logo.png"
 st.logo(LOGO_URL_LARGE)
 
 # ---------------------------------------
 # RUN STREAMLIT | PAGES | NAVIGATION
 # ---------------------------------------
 pg.run()
-
