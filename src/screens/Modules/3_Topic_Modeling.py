@@ -40,17 +40,21 @@ if "df" in st.session_state and st.session_state.df is not None:
         key="topic_modeling_column_select",
         help="Choose the column containing the text data for topic modeling. Ideally, this column holds the reviews, comments or descriptions that will be analyzed to discover potential topics.",
     )
+ 
+    # Add a checkbox to choose auto-detection
+    use_auto_topics = st.checkbox("Use auto-detect for number of topics", value=True)
 
-    # Number of topics selection
-    num_topics = st.slider(
-        "Select number of topics",
-        min_value=2,
-        max_value=20,
-        value=5,
-        step=1,
-        help="Adjust topics granularity: fewer topics mean finer and more specific clusters, more topics lead to broader, more general clusters",
-    )
-
+    if use_auto_topics:
+        num_topics = "auto"
+    else:
+        num_topics = st.slider(
+            "Select number of topics",
+            min_value=2,
+            max_value=20,
+            value=5,
+            step=1,
+            help="Adjust topics granularity: fewer topics lead to broader, more general clusters, more topics mean finer and more specific clusters.")
+    
     if st.button("Run Topic Modeling"):
         try:
             # Perform topic modeling
