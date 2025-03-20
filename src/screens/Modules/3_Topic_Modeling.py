@@ -58,7 +58,7 @@ if "df" in st.session_state and st.session_state.df is not None:
     if st.button("Run Topic Modeling"):
         try:
             # Perform topic modeling
-            topics, topic_assignments = perform_topic_modeling(
+            topics, topic_assignments, topic_model = perform_topic_modeling(
                 st.session_state.df, selected_column, num_topics
             )
 
@@ -72,7 +72,7 @@ if "df" in st.session_state and st.session_state.df is not None:
             st.dataframe(st.session_state.df)
 
             # Visualize topics
-            visualize_topics(topics)
+            visualize_topics(topic_model, topics)
 
         except Exception as e:
             st.error(f"Error performing topic modeling: {e}")

@@ -187,31 +187,69 @@ def perform_topic_modeling(df, selected_column, num_topics):
     progress_bar.empty()
     status_text.empty()
 
-    return topic_info, topics
+    return topic_info, topics, topic_model
 
 
-def visualize_topics(topics):
-    top_topics = topics[topics["Topic"] != -1].head(10)
+def visualize_topics(topic_model, topics):
+    """Generate various topic visualizations"""
+    try:
+        # 1. Intertopic Distance Map
+        st.subheader("Intertopic Distance Map")
+        st.info("""
+        This map shows how topics are related to each other. Topics that are closer together are more similar in content.
+        The size of each circle represents the number of documents in that topic.
+        Hover over topics to see their names and sizes.
+        """)
+        fig_distance = topic_model.visualize_topics()
+        st.plotly_chart(fig_distance, use_container_width=True)
 
-    fig = go.Figure(
-        data=[
-            go.Bar(
-                x=top_topics["Topic"],
-                y=top_topics["Count"],
-                text=top_topics["Name"],
-                textposition="auto",
-            )
-        ]
-    )
+        # 2. Top 10 Topics Bar Chart
+        st.subheader("Top 10 Topics")
+        st.info("""
+        This chart shows the distribution of documents across the top 10 topics.
+        The height of each bar represents how many documents belong to that topic.
+        The topic names are shown below the chart for easy reference.
+        """)
+        top_topics = topics[topics["Topic"] != -1].head(10)
+        fig = go.Figure(
+            data=[
+                go.Bar(
+                    x=top_topics["Topic"],
+                    y=top_topics["Count"],
+                    text=top_topics["Name"],
+                    textposition="auto",
+                )
+            ]
+        )
 
-    fig.update_layout(
-        title="Top 10 Topics",
-        xaxis_title="Topic ID",
-        yaxis_title="Number of Documents",
-        height=500,
-    )
+        fig.update_layout(
+            title="Top 10 Topics",
+            xaxis_title="Topic ID",
+            yaxis_title="Number of Documents",
+            height=500,
+        )
 
-    st.plotly_chart(fig)
+        st.plotly_chart(fig, use_container_width=True)
 
-    for _, row in top_topics.iterrows():
-        st.write(f"Topic {row['Topic']}: {row['Name']}")
+        # Display topic names
+        for _, row in top_topics.iterrows():
+            st.write(f"Topic {row['Topic']}: {row['Name']}")
+
+        # 3. Bar Chart of Top Words per Topic
+        st.subheader("Top Words per Topic")
+        st.info("""
+        This chart shows the most important words for each topic.
+        The longer the bar, the more significant that word is in defining the topic.
+        This helps you understand what each topic is about by looking at its key terms.
+        """)
+        fig_barchart = topic_model.visualize_barchart(
+            top_n_topics=20,  # number of topics to show
+            n_words=10,       # top words for each topic
+            width=800,
+            height=600
+        )
+        st.plotly_chart(fig_barchart, use_container_width=True)
+
+    except Exception as e:
+        st.error(f"Error generating visualizations: {str(e)}")
+        st.write("Some visualizations may not be available due to insufficient data or model configuration.")
