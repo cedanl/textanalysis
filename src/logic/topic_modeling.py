@@ -133,7 +133,7 @@ def fit_topic_model(df, column_of_interest, min_topic_size, optimal_topics):
                                 metric='euclidean', cluster_selection_method='eom', prediction_data=True)
     else:
         # use manual parameters if a fixed number is provided
-        umap_model = UMAP(n_neighbors=4, n_components=2, metric='cosine', random_state=42)
+        umap_model = UMAP(n_neighbors=4, n_components=3, metric='cosine', random_state=42)
         hdbscan_model = HDBSCAN(min_cluster_size=4, min_samples=4, 
                                 metric='euclidean', cluster_selection_method='eom', prediction_data=True)
     
@@ -197,30 +197,16 @@ def perform_topic_modeling(df, selected_column, num_topics):
 
     return df_filtered, topic_info, topics, topic_model
 
-
 def visualize_topics(topic_model, topics):
     """Generate various topic visualizations"""
     try:
-        # 1. Intertopic Distance Map
-        st.subheader("Intertopic Distance Map")
-        st.info("""
-        This map shows how topics are related to each other. Topics that are closer together are more similar in content.
-        The size of each circle represents the number of documents in that topic.
-        Hover over topics to see their names and sizes.
-        """)
-        fig_distance = topic_model.visualize_topics()
-        st.plotly_chart(fig_distance, use_container_width=True)
-
-        # 2. Top 10 Topics Bar Chart
-        st.subheader("Top 10 Topics")
-        st.info("""
-        This chart shows the distribution of documents across the top 10 topics.
-        The height of each bar represents how many documents belong to that topic.
-        The topic names are shown below the chart for easy reference.
-        """)
+        # Top Topics Bar Chart
+        st.info(
+            "This chart shows the top topics based on the number of documents. Each bar’s height tells you how many documents belong to that topic,and the labels show the topic names."
+        )
         topic_info = topic_model.get_topic_info()
         top_topics = topic_info[topic_info["Topic"] != -1].head(10)
-        fig = go.Figure(
+        fig_bar = go.Figure(
             data=[
                 go.Bar(
                     x=top_topics["Topic"],
@@ -230,27 +216,18 @@ def visualize_topics(topic_model, topics):
                 )
             ]
         )
-
-        fig.update_layout(
+        fig_bar.update_layout(
             title="Top 10 Topics",
             xaxis_title="Topic ID",
             yaxis_title="Number of Documents",
             height=500,
         )
+        st.plotly_chart(fig_bar, use_container_width=True)
 
-        st.plotly_chart(fig, use_container_width=True)
-
-        # Display topic names
-        for _, row in top_topics.iterrows():
-            st.write(f"Topic {row['Topic']}: {row['Name']}")
-
-        # 3. Bar Chart of Top Words per Topic
-        st.subheader("Top Words per Topic")
-        st.info("""
-        This chart shows the most important words for each topic.
-        The longer the bar, the more significant that word is in defining the topic.
-        This helps you understand what each topic is about by looking at its key terms.
-        """)
+        # Top Words per Topic Bar Chart
+        st.info(
+            "This chart shows the most important words for each topic. The length of each bar indicates how significant that word is in defining the topic, helping you understand what each topic is about."
+        )
         fig_barchart = topic_model.visualize_barchart(
             top_n_topics=20,  # number of topics to show
             n_words=10,       # top words for each topic
@@ -258,6 +235,13 @@ def visualize_topics(topic_model, topics):
             height=600
         )
         st.plotly_chart(fig_barchart, use_container_width=True)
+
+        # Topic Relationship Graph (Intertopic Distance)
+        st.info(
+            "This graph displays how the topics are related to each other. Topics that appear closer together are more similar. The size of each circle indicates how many documents are in that topic. Hover over a circle to see more details."
+        )
+        fig_distance = topic_model.visualize_topics()
+        st.plotly_chart(fig_distance, use_container_width=True)
 
     except Exception as e:
         st.error(f"Error generating visualizations: {str(e)}")
