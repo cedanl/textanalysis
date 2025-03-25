@@ -57,13 +57,13 @@ if "df" in st.session_state and st.session_state.df is not None:
     
     if st.button("Run Topic Modeling"):
         try:
-            # Perform topic modeling
-            topics, topic_assignments, topic_model = perform_topic_modeling(
+            # perform topic modeling and get the filtered df
+            filtered_df, topics, topic_assignments, topic_model = perform_topic_modeling(
                 st.session_state.df, selected_column, num_topics
             )
 
-            # Add topic assignments to the dataframe
-            st.session_state.df = st.session_state.df.with_columns(
+            # update the session state df to the filtered one
+            st.session_state.df = filtered_df.with_columns(
                 pl.Series("Topic", topic_assignments)
             )
 
@@ -76,6 +76,7 @@ if "df" in st.session_state and st.session_state.df is not None:
 
         except Exception as e:
             st.error(f"Error performing topic modeling: {e}")
+
 else:
     st.write("No DataFrame available. Please upload a file on the Home page.")
 

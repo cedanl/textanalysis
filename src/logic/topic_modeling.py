@@ -21,15 +21,26 @@ DetectorFactory.seed = 0
 
 def filter_entries(df, column_of_interest):
     """Filter out numeric or short entries"""
-    filtered_df = df.filter(
-        (~pl.col(column_of_interest).str.contains(r"^\d+$"))
-        & (pl.col(column_of_interest).str.len_chars() > 1)
+    # Convert the column to string type using pl.String
+    filtered_df = df.with_columns(
+        pl.col(column_of_interest).cast(pl.String)
+    )
+    
+    # Filter out:
+    # 1. Empty strings or strings with only whitespace (using strip_chars() and len_chars())
+    # 2. Pure numeric values (including decimals)
+    # 3. Strings with length <= 1
+    filtered_df = filtered_df.filter(
+        (pl.col(column_of_interest).str.strip_chars().str.len_chars() > 0) &  # Not empty after stripping whitespace
+        (~pl.col(column_of_interest).str.contains(r"^[\d.]+$")) &             # Not purely numeric
+        (pl.col(column_of_interest).str.len_chars() > 1)                      # Longer than 1 character
     )
 
-    st.write(f"Removed {len(df) - len(filtered_df)} rows (short or purely numeric).")
+    st.write(f"Removed {len(df) - len(filtered_df)} rows (empty, short, or purely numeric).")
     st.write(f"Remaining rows: {len(filtered_df)}")
 
     return filtered_df
+
 
 
 def detect_language(df, column_of_interest):
@@ -86,9 +97,7 @@ def filter_text(df, column_of_interest, final_stopwords):
             )
             .alias(column_of_interest)
         )
-        print(
-            f"Text preprocessing completed. Rows in filtered DataFrame: {len(filtered_df)}"
-        )
+        filtered_df = filtered_df.filter(pl.col(column_of_interest).str.len_chars() > 0)
         return filtered_df
     except Exception as e:
         print(f"Error in filter_text: {str(e)}")
@@ -168,16 +177,15 @@ def perform_topic_modeling(df, selected_column, num_topics):
     status_text = st.empty()
 
     status_text.text("Preprocessing data...")
-    df = filter_entries(df, selected_column)
-    dominant_lang = detect_language(df, selected_column)
+    df_filtered = filter_entries(df, selected_column)
+    dominant_lang = detect_language(df_filtered, selected_column)
     final_stopwords = set_stopwords(dominant_lang, [])
-    df = filter_text(df, selected_column, final_stopwords)
+    df_filtered = filter_text(df_filtered, selected_column, final_stopwords)
     progress_bar.progress(0.3)
 
     status_text.text("Fitting topic model...")
     topic_model, topics, probabilities = fit_topic_model(
-        df, selected_column, 3, num_topics
-    )
+        df_filtered, selected_column, 3, num_topics)
     progress_bar.progress(0.7)
 
     status_text.text("Generating topic summary...")
@@ -187,7 +195,7 @@ def perform_topic_modeling(df, selected_column, num_topics):
     progress_bar.empty()
     status_text.empty()
 
-    return topic_info, topics, topic_model
+    return df_filtered, topic_info, topics, topic_model
 
 
 def visualize_topics(topic_model, topics):
@@ -210,7 +218,8 @@ def visualize_topics(topic_model, topics):
         The height of each bar represents how many documents belong to that topic.
         The topic names are shown below the chart for easy reference.
         """)
-        top_topics = topics[topics["Topic"] != -1].head(10)
+        topic_info = topic_model.get_topic_info()
+        top_topics = topic_info[topic_info["Topic"] != -1].head(10)
         fig = go.Figure(
             data=[
                 go.Bar(
