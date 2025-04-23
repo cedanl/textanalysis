@@ -1,7 +1,0 @@
-datetime
-matplotlib
-seaborn
-wordcloud
-pillow
-pandas
-openpyxl
