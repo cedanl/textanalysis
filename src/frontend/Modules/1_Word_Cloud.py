@@ -1,5 +1,5 @@
 import streamlit as st
-from logic.Word_Cloud import generate_wordcloud
+from backend.Word_Cloud import generate_wordcloud
 
 # ---------------------------------------
 # PAGE CONFIGURATION

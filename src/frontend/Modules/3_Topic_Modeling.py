@@ -1,6 +1,6 @@
 import streamlit as st
 import polars as pl
-from logic.topic_modeling import perform_topic_modeling, visualize_topics
+from backend.topic_modeling import perform_topic_modeling, visualize_topics
 
 # ---------------------------------------
 # PAGE CONFIGURATION

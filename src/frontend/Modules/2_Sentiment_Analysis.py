@@ -1,5 +1,5 @@
 import streamlit as st
-from logic.sentiment_analysis import perform_sentiment_analysis, visualize_sentiment
+from backend.sentiment_analysis import perform_sentiment_analysis, visualize_sentiment
 
 # ---------------------------------------
 # PAGE CONFIGURATION

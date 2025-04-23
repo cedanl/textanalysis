@@ -2,7 +2,7 @@ import streamlit as st
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
-from logic.remove_stop_words import remove_stopwords
+from backend.remove_stop_words import remove_stopwords
 from collections import Counter
 
 

@@ -1,36 +1,52 @@
+#-----------------------------------------------------------------------------
+# Organization: CEDA
+# Original Author: Ash Sewnandan
+# Contributors: -
+# License: MIT
+# -----------------------------------------------------------------------------
+"""
+Main Entrypoint for the 1CIJFERHO App
+"""
 import streamlit as st
-from config.screen_scanner import get_screens, group_pages_by_subdirectory
-from logic.file_handler import file_handler
-# ---------------------------------------
-# TODO
-# ---------------------------------------
-# [] Veranderen main.py -> CEDA.py | CEDA_run.py?
-# Add directory ranking/page ranking per file for sorting?
+from backend.file_handler import file_handler
 
-# ---------------------------------------
-# GENERAL PAGE CONFIGURATION
-# ---------------------------------------
-st.set_page_config(page_title="CEDA Preview", page_icon=":material/edit:")
 
-# ---------------------------------------
-# SIDEBAR CONFIGURATION
-# ---------------------------------------
-# Get all pages | Group by subdirectory | Create Streamlit Objects
-pages = get_screens()
-grouped_pages = group_pages_by_subdirectory(pages)
+# -----------------------------------------------------------------------------
+# PAGE OVERVIEW - YOU CAN ADD MORE PAGES HERE
+# -----------------------------------------------------------------------------
+home_page = st.Page("frontend/Overview/Home.py", icon=":material/home:")
 
-# Create the navigation structure
-pg = st.navigation(grouped_pages)
+word_cloud_page = st.Page("frontend/Modules/1_Word_Cloud.py", icon="📊")
+sentiment_analysis_page = st.Page("frontend/Modules/2_Sentiment_Analysis.py", icon="📊")
+topic_modeling_page = st.Page("frontend/Modules/3_Topic_Modeling.py", icon="📊")
+anonymization_page = st.Page("frontend/Modules/4_Anonymize.py", icon="🔐")
+
+# -----------------------------------------------------------------------------
+# SIDEBAR CONFIG - YOU CAN ADD SECTIONS HERE
+# -----------------------------------------------------------------------------
+# Add Logo
+LOGO_URL = "src/assets/npuls_logo.png"
+st.logo(LOGO_URL)
+
+# Initialize Navigation
+pg = st.navigation ( {
+    "Overview": [home_page],
+    "Modules": [word_cloud_page, topic_modeling_page, sentiment_analysis_page, anonymization_page]
+})
 
 # Run File Handler in Sidebar
 if __name__ == "__main__":
     file_handler()
-
-# Add Logo
-LOGO_URL_LARGE = "src/assets/npuls_logo.png"
-st.logo(LOGO_URL_LARGE)
-
-# ---------------------------------------
-# RUN STREAMLIT | PAGES | NAVIGATION
-# ---------------------------------------
+# -----------------------------------------------------------------------------
+# SESSION STATE MANAGEMENT
+# -----------------------------------------------------------------------------
+# Initialize session state if not already done
+#if 'INPUT_FOLDER' not in st.session_state:
+#    st.session_state.INPUT_FOLDER = "data/01-input"
+    
+# -----------------------------------------------------------------------------
+# Run the app
+# -----------------------------------------------------------------------------
 pg.run()
+
+# ADD File handler

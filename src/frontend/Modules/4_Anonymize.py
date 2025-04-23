@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import polars as pl
-from logic.anonymizer import process_dataframe
+from backend.anonymizer import process_dataframe
 
 # ---------------------------------------
 # PAGE CONFIGURATION
