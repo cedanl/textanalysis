@@ -34,9 +34,7 @@ pg = st.navigation ( {
     "Modules": [word_cloud_page, topic_modeling_page, sentiment_analysis_page, anonymization_page]
 })
 
-# Run File Handler in Sidebar
-if __name__ == "__main__":
-    file_handler()
+
 # -----------------------------------------------------------------------------
 # SESSION STATE MANAGEMENT
 # -----------------------------------------------------------------------------
@@ -48,5 +46,4 @@ if __name__ == "__main__":
 # Run the app
 # -----------------------------------------------------------------------------
 pg.run()
-
-# ADD File handler
+file_handler()
