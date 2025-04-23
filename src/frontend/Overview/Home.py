@@ -1,57 +1,62 @@
+# Home.py
 import streamlit as st
-
-# TODO
-# - Add gradient line between header and subtitle
-# - Add button to data explorer page & explain what it does
-# - Remove upload button & text
 
 # -----------------------------------------------------------------------------
 # Page Configuration
 # -----------------------------------------------------------------------------
 st.set_page_config(
-    page_title="CEDA | 1cijferho ",
+    page_title="CEDA | Text Analysis",
     layout="centered",  # This sets the layout to centered (not wide)
     initial_sidebar_state="expanded"
+)
+
+title = "Home"
+icon = "Home 🏠"
+st.title("Welcome to the CEDA text analysis tool")
+st.markdown(
+    """
+    On the left, you'll find several "Modules" designed for different text analysis tasks.  
+    
+    Click on them to explore their functions and how to use them.
+    
+    You can find the documentation below, where we've provided a more detailed explanation of the different modules.
+
+"""
 )
 
 # -----------------------------------------------------------------------------
 # Main Section
 # -----------------------------------------------------------------------------
 # Main header and subtitle
-st.title("🚀 1cijferho")
-st.info("🔧 This is beta version (v0.5.3). Your feedback is appreciated!")
-st.caption("Transform complex DUO datasets into actionable insights in minutes, not months. ✨")
-st.caption("📊 Instant visualization • ⏱️ Time-saving automation • 🔍 Intelligent error reduction • 👥 Enhanced accessibility • 🔄 Batch processing")
+st.title("🚀 Text Analysis")
+st.info("🔧 This is beta version (v0.6.9). Your feedback is appreciated!")
+st.caption("Text analysis involves extracting meaningful insights, patterns, and trends from textual data, enabling data-driven decisions and automation. ✨")
+st.caption("📊 Comprehensive text analysis • 🔍 Extract meaningful insights • 🧠 AI-powered processing • 📈 Data-driven decisions • ✨ Unlock hidden patterns")
 
 # Overview
 st.write("""
-Our application decodes and delimits all 1CHO files, enabling researchers to access educational 
-data without technical expertise. We also provide pre-made visualizations and data sets 
-based on 1CHO for immediate insights.
+Our application leverages advanced techniques to analyze text data, 
+extract key insights, and uncover hidden patterns. Whether you're working with large datasets or 
+individual documents, our tools are designed to make text analysis accessible and efficient.
 """)
 
-
 st.subheader("📢 Get Involved")
-st.write("We're constantly improving based on your feedback! Share your ideas by emailing us at a.sewnandan@hhs.nl or t.iwan@vu.nl, or submit a feature request:")
+st.write("We're constantly improving based on your feedback! Share your ideas by emailing us at amir.khodaie@ru.nl, a.sewnandan@hhs.nl or t.iwan@vu.nl, or submit a feature request:")
 
 # Adding an inline button for GitHub issues
-st.link_button("Submit Feature Request", url="https://github.nl/cedanl/1cijferho/issues", help="Opens our GitHub issues page")
+st.link_button("Submit Feature Request", url="https://github.nl/cedanl/textanalysis/issues", help="Opens our GitHub issues page")
 
-# Divider before Demo section
-st.divider()
 
-# -----------------------------------------------------------------------------
-# Demo Section
-# -----------------------------------------------------------------------------
-# Demo section
-st.header("✨ Try the Application")
-
-st.write("Upload your 1CHO data and discover insights in minutes. Click below to get started.")
-if st.button(":material/explore: Data Explorer", help="Opens the Data Explorer", type="primary"):
-    st.switch_page("frontend/Files/Data_Explorer.py")
+# Read README.md file
+with open("README.md", "r", encoding="utf-8") as file:
+    readme_content = file.read()
+# Display README in an expandable section
+with st.expander("📖 Read the documentation"):
+    st.markdown(readme_content, unsafe_allow_html=True)
 
 # -----------------------------------------------------------------------------
 # Footer Section
 # -----------------------------------------------------------------------------
-# Footer section
+
 st.caption("© 2025 CEDA | Bridging institutions, sharing solutions, advancing education.")
+
