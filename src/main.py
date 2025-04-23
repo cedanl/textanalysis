@@ -16,9 +16,9 @@ from backend.file_handler import file_handler
 # -----------------------------------------------------------------------------
 home_page = st.Page("frontend/Overview/Home.py", icon=":material/home:")
 
-word_cloud_page = st.Page("frontend/Modules/1_Word_Cloud.py", icon="📊")
-sentiment_analysis_page = st.Page("frontend/Modules/2_Sentiment_Analysis.py", icon="📊")
-topic_modeling_page = st.Page("frontend/Modules/3_Topic_Modeling.py", icon="📊")
+word_cloud_page = st.Page("frontend/Modules/1_Word_Cloud.py", icon="☁️")
+sentiment_analysis_page = st.Page("frontend/Modules/2_Sentiment_Analysis.py", icon="😊")
+topic_modeling_page = st.Page("frontend/Modules/3_Topic_Modeling.py", icon="🧠")
 anonymization_page = st.Page("frontend/Modules/4_Anonymize.py", icon="🔐")
 
 # -----------------------------------------------------------------------------
