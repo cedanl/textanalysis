@@ -58,6 +58,3 @@ else:
     # No file uploaded
     st.warning("Please upload an Excel file to continue.")
     st.info(":material/info: If you encounter any issues, try to refreshing the page or run 'uv cache prune' in the terminal.")
-    # Optional: Clear the dataframe when no file is present
-    if 'df' in st.session_state:
-        del st.session_state.df

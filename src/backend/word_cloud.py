@@ -2,14 +2,13 @@ import streamlit as st
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
-from backend.remove_stop_words import remove_stopwords
+#from backend.remove_stop_words import remove_stopwords
 from collections import Counter
 
 # Generate Wordcloud Function
 def generate_wordcloud(column_data):
     print("Wordcloud Generated")  # You can keep this debug print if desired
     return column_data
-
 
 
 def get_word_frequencies(text):

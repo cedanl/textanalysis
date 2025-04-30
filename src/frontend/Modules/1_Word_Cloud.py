@@ -11,10 +11,10 @@ st.set_page_config(
 )
 
 # -----------------------------------------------------------------------------
-# HEADER SECTION
+# EXPLANATION
 # -----------------------------------------------------------------------------
-# Main header and subtitle
 st.title(":material/cloud: Word Cloud")
+st.divider()
 st.markdown(
     """
     ### When do I use a word cloud?
@@ -24,6 +24,7 @@ st.markdown(
     Simply upload your text, select the column you want to analyze, and the most common words will appear larger!
     """
 )
+
 
 # -----------------------------------------------------------------------------
 # CONTENT
@@ -51,10 +52,11 @@ else:
     # ---------------------------------------
     # FORM - GENERATE WORDCLOUD
     # ---------------------------------------
-    if st.button("Generate Word Cloud"):
+    if st.button("Generate Word Cloud", type="primary"):
         column_data = st.session_state.df[selected_column]
         # Call the generate_wordcloud function with the selected column data
         result = generate_wordcloud(column_data)
         
         # Display the result
         st.write(result)
+        print(result)
