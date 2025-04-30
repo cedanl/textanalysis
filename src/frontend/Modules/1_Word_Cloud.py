@@ -26,25 +26,31 @@ st.markdown(
 )
 
 # -----------------------------------------------------------------------------
-# DATAFRAME SECTION
+# CONTENT
 # -----------------------------------------------------------------------------
+# SHOW IF DATAFRAME IS NOT AVAILABE
 if "df" not in st.session_state or st.session_state.df is None:
     st.warning("No DataFrame available. Please upload a file.")
+    if st.button(":material/upload: Upload a file", help="Opens Upload File", type="primary"):
+        st.switch_page("frontend/Files/Upload_File.py")
+# SHOW DATAFRAME IF AVAILABLE
 else:
-    st.data_editor(st.session_state.df) # Note that this is indented to only run when df is not None
-
+    # --------------------------------------
+    # VIEW - DATAFRAME 
+    # ---------------------------------------
+    st.data_editor(st.session_state.df) 
 
     # ---------------------------------------
-    # FORM ELEMENTS
+    # FORM - SELECT COLUMN
     # ---------------------------------------
-    # Selectie Kolom
-    # Create the selectbox with column names from the existing dataframe
     selected_column = st.selectbox(
         'Select a column:',
         st.session_state.df.columns
     )
 
-    # Wordcloud Button
+    # ---------------------------------------
+    # FORM - GENERATE WORDCLOUD
+    # ---------------------------------------
     if st.button("Generate Word Cloud"):
         column_data = st.session_state.df[selected_column]
         # Call the generate_wordcloud function with the selected column data

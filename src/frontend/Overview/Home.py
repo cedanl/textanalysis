@@ -11,11 +11,15 @@ st.set_page_config(
 )
 
 # -----------------------------------------------------------------------------
+# Set 
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
 # Main Section
 # -----------------------------------------------------------------------------
 # Set page title and icon
 title = "Home"
-icon = "Home 🏠"
+icon = "🏠"
 
 # Main header and subtitle
 st.title("🚀 Welcome to the CEDA text analysis tool")
@@ -33,9 +37,6 @@ st.markdown(
 )
 if st.button(":material/upload: Upload a file to get started", help="Opens Upload File", type="primary"):
     st.switch_page("frontend/Files/Upload_File.py")
-
-st.info(":material/info: If you encounter any issues, try to refreshing the page or run 'uv cache prune' in the terminal.")
-
 
 st.subheader("📢 Get Involved")
 st.write("We're constantly improving based on your feedback! Share your ideas by emailing us at amir.khodaie@ru.nl, a.sewnandan@hhs.nl or t.iwan@vu.nl, or submit a feature request:")

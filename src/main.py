@@ -5,7 +5,7 @@
 # License: MIT
 # -----------------------------------------------------------------------------
 """
-Main Entrypoint for the 1CIJFERHO App
+Main Entrypoint for the Text Analysis App
 """
 import streamlit as st
 import subprocess
