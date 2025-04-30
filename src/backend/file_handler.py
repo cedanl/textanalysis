@@ -9,6 +9,7 @@ def file_handler():
         # Read CSV into DataFrame
         st.session_state.df = pl.read_excel(uploaded_file)
         st.sidebar.success("File uploaded successfully!")
+        st.rerun()
     else:
         st.sidebar.warning("Please upload a file to continue.")
         if "df" not in st.session_state:
