@@ -4,13 +4,17 @@ from backend.word_cloud import generate_wordcloud
 # ---------------------------------------
 # PAGE CONFIGURATION
 # ---------------------------------------
-icon = ":material/cloud_queue:"
+st.set_page_config(
+    page_title="Word Cloud",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
 
-# ---------------------------------------
-# PAGE ELEMENTS
-# ---------------------------------------
-st.title("Word clouds")
-
+# -----------------------------------------------------------------------------
+# HEADER SECTION
+# -----------------------------------------------------------------------------
+# Main header and subtitle
+st.title(":material/cloud: Word Cloud")
 st.markdown(
     """
     ### When do I use a word cloud?
@@ -21,9 +25,24 @@ st.markdown(
     """
 )
 
-# Display or edit DataFrame if available
-if st.session_state.df is not None:
-    st.session_state.df = st.data_editor(st.session_state.df, key="main_data_editor")
-    generate_wordcloud()
+# -----------------------------------------------------------------------------
+# DATAFRAME SECTION
+# -----------------------------------------------------------------------------
+if "df" not in st.session_state or st.session_state.df is None:
+    st.warning("No DataFrame available. Please upload a file.")
 else:
-    st.write("No DataFrame available. Please upload a file.")
+    st.data_editor(st.session_state.df)
+
+# ---------------------------------------
+# PAGE ELEMENTS
+# ---------------------------------------
+
+
+
+
+# Display or edit DataFrame if available
+#if st.session_state.df is not None:
+#    st.session_state.df = st.data_editor(st.session_state.df, key="main_data_editor")
+#    generate_wordcloud()
+#else:
+#    st.write("No DataFrame available. Please upload a file.")
