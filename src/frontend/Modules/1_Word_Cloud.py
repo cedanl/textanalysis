@@ -32,17 +32,29 @@ if "df" not in st.session_state or st.session_state.df is None:
     st.warning("No DataFrame available. Please upload a file.")
 else:
     st.data_editor(st.session_state.df)
+    #generate_wordcloud()
+
 
 # ---------------------------------------
-# PAGE ELEMENTS
+# FORM ELEMENTS
 # ---------------------------------------
 
+# Selectie Kolom
+# Create the selectbox with column names from the existing dataframe
+selected_column = st.selectbox(
+    'Select a column:',
+    st.session_state.df.columns
+)
 
+# Wordcloud Button
+if st.button("Generate Word Cloud"):
+    # Get the selected column data from the dataframe
+    column_data = st.session_state.df[selected_column]
+    
+    # Pass the column data to your function and capture the return value
+    result = generate_wordcloud(column_data)
+    
+    # Display the result
+    st.write(result)
 
-
-# Display or edit DataFrame if available
-#if st.session_state.df is not None:
-#    st.session_state.df = st.data_editor(st.session_state.df, key="main_data_editor")
-#    generate_wordcloud()
-#else:
-#    st.write("No DataFrame available. Please upload a file.")
+### ###

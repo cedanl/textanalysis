@@ -17,9 +17,9 @@ from backend.file_handler import file_handler
 home_page = st.Page("frontend/Overview/Home.py", icon=":material/home:")
 
 word_cloud_page = st.Page("frontend/Modules/1_Word_Cloud.py", icon="☁️")
-sentiment_analysis_page = st.Page("frontend/Modules/2_Sentiment_Analysis.py", icon="😊")
-topic_modeling_page = st.Page("frontend/Modules/3_Topic_Modeling.py", icon="🧠")
-anonymization_page = st.Page("frontend/Modules/4_Anonymize.py", icon="🔐")
+#sentiment_analysis_page = st.Page("frontend/Modules/2_Sentiment_Analysis.py", icon="😊")
+#topic_modeling_page = st.Page("frontend/Modules/3_Topic_Modeling.py", icon="🧠")
+#anonymization_page = st.Page("frontend/Modules/4_Anonymize.py", icon="🔐")
 
 # -----------------------------------------------------------------------------
 # SIDEBAR CONFIG - YOU CAN ADD SECTIONS HERE
@@ -31,7 +31,7 @@ st.logo(LOGO_URL)
 # Initialize Navigation
 pg = st.navigation ( {
     "Overview": [home_page],
-    "Modules": [word_cloud_page, topic_modeling_page, sentiment_analysis_page, anonymization_page]
+    "Modules": [word_cloud_page]
 })
 
 
@@ -39,8 +39,8 @@ pg = st.navigation ( {
 # SESSION STATE MANAGEMENT
 # -----------------------------------------------------------------------------
 # Initialize session state if not already done
-#if 'INPUT_FOLDER' not in st.session_state:
-#    st.session_state.INPUT_FOLDER = "data/01-input"
+if 'df' not in st.session_state:
+    st.session_state.df = None
     
 # -----------------------------------------------------------------------------
 # Run the app

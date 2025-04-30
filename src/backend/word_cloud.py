@@ -5,13 +5,19 @@ import pandas as pd
 from backend.remove_stop_words import remove_stopwords
 from collections import Counter
 
+# Generate Wordcloud Function
+def generate_wordcloud(column_data):
+    print("Wordcloud Generated")  # You can keep this debug print if desired
+    return column_data
+
+
 
 def get_word_frequencies(text):
     words = text.lower().split()
     return Counter(words)
 
 
-def generate_wordcloud():
+def generate_wordcloudz():
     if st.session_state.df is not None:
         correct_columns = st.session_state.df.columns
 
