@@ -1,4 +1,4 @@
-#-----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Organization: CEDA
 # Original Author: Ash Sewnandan
 # Contributors: -
@@ -8,6 +8,9 @@
 Main Entrypoint for the 1CIJFERHO App
 """
 import streamlit as st
+import subprocess
+import sys
+import os
 
 # -----------------------------------------------------------------------------
 # PAGE OVERVIEW - YOU CAN ADD MORE PAGES HERE
@@ -27,12 +30,11 @@ LOGO_URL = "src/assets/npuls_logo.png"
 st.logo(LOGO_URL)
 
 # Initialize Navigation
-pg = st.navigation ( {
+pg = st.navigation({
     "Overview": [home_page],
     "Files": [upload_file_page],
     "Modules": [word_cloud_page],
 })
-
 
 # -----------------------------------------------------------------------------
 # Run the app
