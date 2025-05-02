@@ -27,7 +27,7 @@ st.markdown(
 
 
 # -----------------------------------------------------------------------------
-# CONTENT
+# CONTENT - WORDCLOUD
 # -----------------------------------------------------------------------------
 # SHOW IF DATAFRAME IS NOT AVAILABE
 if "df" not in st.session_state or st.session_state.df is None:
