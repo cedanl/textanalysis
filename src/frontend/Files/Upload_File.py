@@ -14,7 +14,7 @@ st.set_page_config(
 # EXPLANATION
 # -----------------------------------------------------------------------------
 # Main header and subtitle
-st.title("📤 Upload your Excel file")
+st.title(":material/upload: Upload your Excel file")
 st.divider()
 st.markdown(
     """
@@ -35,7 +35,6 @@ if uploaded_file is not None:
     # Also store file metadata
     st.session_state.filename = uploaded_file.name
     st.session_state.filesize = uploaded_file.size
-    st.success("File uploaded successfully! You can now proceed to the analysis modules.")
     st.balloons()
 
 # Check if we have data in the session state

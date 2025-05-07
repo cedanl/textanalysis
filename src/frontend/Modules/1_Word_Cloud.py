@@ -1,5 +1,6 @@
 import streamlit as st
 from backend.word_cloud import generate_wordcloud
+import streamlit as st
 
 # ---------------------------------------
 # PAGE CONFIGURATION
@@ -25,6 +26,11 @@ st.markdown(
     """
 )
 
+# -----------------------------------------------------------------------------
+# SIDEBAR
+# -----------------------------------------------------------------------------
+
+
 
 # -----------------------------------------------------------------------------
 # CONTENT - WORDCLOUD
@@ -39,7 +45,7 @@ else:
     # --------------------------------------
     # VIEW - DATAFRAME 
     # ---------------------------------------
-    st.data_editor(st.session_state.df) 
+    st.dataframe(st.session_state.df)
 
     # ---------------------------------------
     # FORM - SELECT COLUMN
@@ -49,14 +55,20 @@ else:
         st.session_state.df.columns
     )
 
+    # Word Count Select Box
+
     # ---------------------------------------
     # FORM - GENERATE WORDCLOUD
     # ---------------------------------------
     if st.button("Generate Word Cloud", type="primary"):
         column_data = st.session_state.df[selected_column]
         # Call the generate_wordcloud function with the selected column data
-        result = generate_wordcloud(column_data)
-        
-        # Display the result
-        st.write(result)
-        print(result)
+        fig, frequencies = generate_wordcloud(column_data)
+
+        tab1, tab2 = st.tabs(["Word Cloud", "Word Count"])
+
+        with tab1:
+            st.pyplot(fig)
+
+        with tab2:
+            st.dataframe(frequencies)

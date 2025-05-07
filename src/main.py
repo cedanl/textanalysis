@@ -16,8 +16,10 @@ import os
 # PAGE OVERVIEW - YOU CAN ADD MORE PAGES HERE
 # -----------------------------------------------------------------------------
 home_page = st.Page("frontend/Overview/Home.py", icon=":material/home:")
-word_cloud_page = st.Page("frontend/Modules/1_Word_Cloud.py", icon="☁️")
 upload_file_page = st.Page("frontend/Files/Upload_File.py", icon=":material/upload:") 
+remove_stopwords_page = st.Page("frontend/Files/Remove_Stopwords.py", icon=":material/crossword:")
+anonimize_page = st.Page("frontend/Files/Anonymize.py", icon=":material/domino_mask:")
+word_cloud_page = st.Page("frontend/Modules/1_Word_Cloud.py", icon="☁️")
 #sentiment_analysis_page = st.Page("frontend/Modules/2_Sentiment_Analysis.py", icon="😊")
 #topic_modeling_page = st.Page("frontend/Modules/3_Topic_Modeling.py", icon="🧠")
 #anonymization_page = st.Page("frontend/Modules/4_Anonymize.py", icon="🔐")
@@ -32,7 +34,7 @@ st.logo(LOGO_URL)
 # Initialize Navigation
 pg = st.navigation({
     "Overview": [home_page],
-    "Files": [upload_file_page],
+    "Files": [upload_file_page, remove_stopwords_page, anonimize_page],
     "Modules": [word_cloud_page],
 })
 

@@ -1,25 +1,28 @@
 import streamlit as st
-import pandas as pd
-import polars as pl
-from backend.anonymizer import process_dataframe
 
 # ---------------------------------------
 # PAGE CONFIGURATION
 # ---------------------------------------
-icon = ":material/lock:"
+st.set_page_config(
+    page_title="Anonimyzer",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
 
-# ---------------------------------------
-# PAGE ELEMENTS
-# ---------------------------------------
-st.title("Anonymizer")
-
+# -----------------------------------------------------------------------------
+# EXPLANATION
+# -----------------------------------------------------------------------------
+st.title(":material/domino_mask: Anonymizer")
+st.divider()
 st.markdown(
     """
-    ### When do I use an anonymizer?
+    ### Anonymizer
     Anonymizers are useful for removing sensitive information (names) from text responses.
-    Works with any CSV file containing open-ended answers.
+    Works with any Excel file containing open-ended answers.
     """
 )
+
+
 
 # Display interface only if DataFrame exists
 if "df" in st.session_state and st.session_state.df is not None:
