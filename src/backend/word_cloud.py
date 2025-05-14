@@ -30,8 +30,3 @@ def generate_wordcloud(column_data):
     
     # Return both results
     return fig, frequencies_df
-
-
-# Word Frequency
-# Top 50 Most Common Words
-# Words to exclude in options = list of words to exclude

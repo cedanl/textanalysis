@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "bertopic>=0.16.4",
-    "fastexcel>=0.12.1",
+    "fastexcel>=0.14.0",
     "langdetect>=1.0.9",
     "nltk>=3.9.1",
     "numpy==1.26",

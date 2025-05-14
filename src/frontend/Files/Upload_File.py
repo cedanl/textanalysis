@@ -15,14 +15,8 @@ st.set_page_config(
 # -----------------------------------------------------------------------------
 # Main header and subtitle
 st.title(":material/upload: Upload your Excel file")
+st.caption("This page allows you to upload an Excel File that can be used with the various analysis modules. Load your file below to get started.")
 st.divider()
-st.markdown(
-    """
-    This page allows you to upload Excel files that can be used with various analysis modules.
-    
-    Simply upload your Excel file below to begin working with the data.
-    """
-)
 
 # -----------------------------------------------------------------------------
 # CONTENT - FILE UPLOAD 
@@ -31,7 +25,8 @@ uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx"])
 
 # Store file information when a new file is uploaded
 if uploaded_file is not None:
-    st.session_state.df = pl.read_excel(uploaded_file)
+    st.session_state.df_raw = pl.read_excel(uploaded_file)
+    st.session_state.df = st.session_state.df_raw
     # Also store file metadata
     st.session_state.filename = uploaded_file.name
     st.session_state.filesize = uploaded_file.size
