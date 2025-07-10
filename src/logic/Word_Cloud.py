@@ -3,6 +3,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
 from logic.remove_stop_words import remove_stopwords
+from logic.dataframe_manager import get_working_dataframe
 from collections import Counter
 
 
@@ -12,8 +13,11 @@ def get_word_frequencies(text):
 
 
 def generate_wordcloud():
-    if st.session_state.df is not None:
-        correct_columns = st.session_state.df.columns
+    # Use working DataFrame for processing
+    working_df = get_working_dataframe()
+    
+    if working_df is not None:
+        correct_columns = working_df.columns
 
         selected_column = st.selectbox(
             "Select a column for Word Cloud",
@@ -33,7 +37,7 @@ def generate_wordcloud():
 
         if st.button("Process Text"):
             try:
-                column_data = st.session_state.df[selected_column]
+                column_data = working_df[selected_column]
 
                 if isinstance(column_data, pd.Series):
                     text = " ".join(column_data.dropna().astype(str))
@@ -89,4 +93,4 @@ def generate_wordcloud():
                     st.error(f"Error generating word cloud: {e}")
 
     else:
-        st.write("No DataFrame available. Please upload a file.")
+        st.write("No DataFrame available. Please upload a file on the Home page.")

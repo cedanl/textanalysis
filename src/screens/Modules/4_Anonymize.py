@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import polars as pl
 from logic.anonymizer import process_dataframe
+from logic.dataframe_manager import display_dataframe_status, get_available_columns_for_module, get_active_dataframe, get_working_dataframe
 
 # ---------------------------------------
 # PAGE CONFIGURATION
@@ -23,85 +24,106 @@ st.markdown(
 
 # Display interface only if DataFrame exists
 if "df" in st.session_state and st.session_state.df is not None:
-    # Data editor
-    st.session_state.df = st.data_editor(st.session_state.df, key="anonym_editor")
+    # Display DataFrame status and transformation history
+    display_dataframe_status()
+    
+    # Get the active DataFrame to display (original or current)
+    active_df = get_active_dataframe()
+    if active_df is not None:
+        # Show read-only view if viewing original, editable if viewing current
+        if st.session_state.get("dataframe_view_mode", "current") == "original":
+            st.dataframe(active_df, key="view_original_df_anonym")
+        else:
+            st.session_state.df = st.data_editor(active_df, key="anonym_editor")
 
     # Column selection
+    available_columns = get_available_columns_for_module("Anonymizer")
     text_col = st.selectbox(
-        "Select text column to anonymize", st.session_state.df.columns
+        "Select text column to anonymize", 
+        available_columns,
+        help="Choose the text column to anonymize. Works with both original and transformed text columns."
     )
 
     # Process button
+    # Warn if viewing original DataFrame
+    if st.session_state.get("dataframe_view_mode", "current") == "original":
+        st.warning("You're viewing the original DataFrame. Anonymization will be applied to the current DataFrame (with transformations).")
+    
     if st.button("Anonymize Text"):
-        with st.spinner("Detecting sensitive information..."):
-            # Process dataframe
-            results = process_dataframe(st.session_state.df, text_col)
-            st.session_state.anonymized_df = results
+        # Use working DataFrame for processing
+        working_df = get_working_dataframe()
+        if working_df is not None:
+            with st.spinner("Detecting sensitive information..."):
+                # Process dataframe
+                results = process_dataframe(working_df, text_col)
+                st.session_state.anonymized_df = results
 
-        st.success("Anonymization complete!")
+            st.success("Anonymization complete!")
 
-        # Display debugging information
-        st.subheader("Anonymization Preview")
-        show_debug = st.toggle("Show replacements", value=True)
+            # Display debugging information
+            st.subheader("Anonymization Preview")
+            show_debug = st.toggle("Show replacements", value=True)
 
-        # Filter rows with replacements
-        rows_with_replacements = results[results["detected_entities"].apply(len) > 0]
+            # Filter rows with replacements
+            rows_with_replacements = results[results["detected_entities"].apply(len) > 0]
 
-        if rows_with_replacements.empty:
-            st.info("No replacements were made in the text.")
-        else:
-            # Show up to 3 rows with annotations
-            for idx, row in rows_with_replacements.head(10).iterrows():
-                st.write(f"Row {idx}")
-                col1, col2 = st.columns(2)
+            if rows_with_replacements.empty:
+                st.info("No replacements were made in the text.")
+            else:
+                # Show up to 3 rows with annotations
+                for idx, row in rows_with_replacements.head(10).iterrows():
+                    st.write(f"Row {idx}")
+                    col1, col2 = st.columns(2)
 
-                with col1:
-                    st.write("**Original:**")
-                    st.write(row["original"])
+                    with col1:
+                        st.write("**Original:**")
+                        st.write(row["original"])
 
-                with col2:
-                    st.write("**Anonymized:**")
-                    if show_debug:
-                        # Highlight replacements
-                        annotated = row["anonymized"]
-                        for entity in row["detected_entities"]:
-                            annotated = annotated.replace(
-                                f"[{entity['label']}]", f"**[{entity['label']}]**"
+                    with col2:
+                        st.write("**Anonymized:**")
+                        if show_debug:
+                            # Highlight replacements
+                            annotated = row["anonymized"]
+                            for entity in row["detected_entities"]:
+                                annotated = annotated.replace(
+                                    f"[{entity['label']}]", f"**[{entity['label']}]**"
+                                )
+                            st.markdown(annotated, unsafe_allow_html=True)
+                        else:
+                            st.write(row["anonymized"])
+
+                        # Show detected entities
+                        with st.expander("Show replacements"):
+                            st.json(
+                                {
+                                    "entities": row["detected_entities"],
+                                    "count": len(row["detected_entities"]),
+                                }
                             )
-                        st.markdown(annotated, unsafe_allow_html=True)
-                    else:
-                        st.write(row["anonymized"])
 
-                    # Show detected entities
-                    with st.expander("Show replacements"):
-                        st.json(
-                            {
-                                "entities": row["detected_entities"],
-                                "count": len(row["detected_entities"]),
-                            }
-                        )
+                # Show if there are more rows with replacements
+                if len(rows_with_replacements) > 3:
+                    st.info(
+                        f"{len(rows_with_replacements)} more rows with replacements not shown."
+                    )
 
-            # Show if there are more rows with replacements
-            if len(rows_with_replacements) > 3:
-                st.info(
-                    f"{len(rows_with_replacements)} more rows with replacements not shown."
-                )
+            # Download section
+            st.divider()
+            csv_data = results.to_csv(index=False).encode("utf-8")
+            st.download_button(
+                label="Download Anonymized Data",
+                data=csv_data,
+                file_name="anonymized_data.csv",
+                mime="text/csv",
+            )
 
-        # Download section
-        st.divider()
-        csv_data = results.to_csv(index=False).encode("utf-8")
-        st.download_button(
-            label="Download Anonymized Data",
-            data=csv_data,
-            file_name="anonymized_data.csv",
-            mime="text/csv",
-        )
-
-        # Show statistics
-        total_replacements = sum(
-            len(row["detected_entities"]) for _, row in results.iterrows()
-        )
-        st.metric("Total replacements made", total_replacements)
+            # Show statistics
+            total_replacements = sum(
+                len(row["detected_entities"]) for _, row in results.iterrows()
+            )
+            st.metric("Total replacements made", total_replacements)
+        else:
+            st.error("No DataFrame available for processing.")
 
 else:
     st.warning("No data loaded. Upload a file first from the main page.")
