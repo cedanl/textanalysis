@@ -69,16 +69,21 @@ def generate_wordcloud():
 
             if st.button("Generate Word Cloud"):
                 try:
-                    # Create a copy of the processed text for exclusion
-                    filtered_text = st.session_state.processed_text
+                    # Create a copy of word frequencies for exclusion
+                    filtered_word_freq = st.session_state.word_freq.copy()
 
-                    # Remove excluded words
+                    # Remove excluded words from frequency counter (case-insensitive)
                     for word in words_to_exclude:
-                        filtered_text = filtered_text.replace(word, "")
+                        # Remove the word in its original case and any other case variations
+                        word_lower = word.lower()
+                        keys_to_remove = [key for key in filtered_word_freq.keys() 
+                                        if key.lower() == word_lower]
+                        for key in keys_to_remove:
+                            del filtered_word_freq[key]
 
                     wordcloud = WordCloud(
                         width=800, height=400, background_color="white"
-                    ).generate(filtered_text)
+                    ).generate_from_frequencies(filtered_word_freq)
 
                     fig, ax = plt.subplots(figsize=(10, 5))
                     ax.imshow(wordcloud, interpolation="bilinear")
